@@ -8,6 +8,7 @@ public class Pocket : MonoBehaviour {
         if (collision.gameObject.CompareTag("Ball"))
         {
             PuntuactionManager.UpdatePuntuaction(PocketValue);
+            BallManager.UpdateBalls();
         }
     }
 }
