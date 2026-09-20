@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4047555086032145481}
   - component: {fileID: 7050787301457025298}
   m_Layer: 0
-  m_Name: Palito
+  m_Name: Pin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
