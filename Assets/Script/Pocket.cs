@@ -7,6 +7,11 @@ public class Pocket : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
+            if (collision.TryGetComponent<PachinkoBall>(out var ball))
+            {
+                ball.ReleaseToPool();
+            }
+
             PuntuactionManager.UpdatePuntuaction(PocketValue);
             BallManager.UpdateBalls();
         }
