@@ -4,6 +4,7 @@ using UnityEngine.Pool;
 public class PachinkoBall : MonoBehaviour
 {
     private IObjectPool<GameObject> ballPool;
+    [HideInInspector] public float ballMultiplier = 1f;
 
     public void SetPool(IObjectPool<GameObject> pool)
     {

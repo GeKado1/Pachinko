@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour
         #if UNITY_EDITOR
             if (Input.GetKeyDown(KeyCode.T))
             {
-            ButtonsTest.SetActive(!ButtonsTest.gameObject.activeSelf);
+                ButtonsTest.SetActive(!ButtonsTest.gameObject.activeSelf);
             }
         #endif
     }

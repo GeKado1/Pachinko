@@ -349,7 +349,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 837068353362445501, guid: 2bc3cf9b0a8172e49943588fa730706d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.76
+      value: 3.88
       objectReference: {fileID: 0}
     - target: {fileID: 837068353362445501, guid: 2bc3cf9b0a8172e49943588fa730706d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -390,10 +390,6 @@ PrefabInstance:
     - target: {fileID: 4657994081999563921, guid: 2bc3cf9b0a8172e49943588fa730706d, type: 3}
       propertyPath: m_Name
       value: Pocket
-      objectReference: {fileID: 0}
-    - target: {fileID: 7286571648809565309, guid: 2bc3cf9b0a8172e49943588fa730706d, type: 3}
-      propertyPath: PocketValue
-      value: 10000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

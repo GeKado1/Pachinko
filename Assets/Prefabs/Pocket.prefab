@@ -175,3 +175,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d97c696b9e252a041a34cc0a7ca06118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PocketValue: 1
+  PointsMultiplier: 1
