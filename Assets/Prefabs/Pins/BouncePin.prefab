@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6224273821009020957}
   - component: {fileID: 4210244434830686834}
+  - component: {fileID: 362351249488482878}
   m_Layer: 0
   m_Name: BouncePin
   m_TagString: Untagged
@@ -68,6 +69,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.28
+--- !u!114 &362351249488482878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7749264837418364889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc04a4a332c3886448849bf7bce99618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounceForce: 7.5
+  forceUpwardsGlobal: 1
+  resetVelocityOnBounce: 1
 --- !u!1 &7861769302260687192
 GameObject:
   m_ObjectHideFlags: 0
