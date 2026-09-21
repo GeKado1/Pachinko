@@ -8,15 +8,15 @@ public class Pocket : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
-            float ballMultiplier = 1f;
+            float ballValue = 1f;
 
             if (collision.TryGetComponent<PachinkoBall>(out var ball))
             {
                 ball.ReleaseToPool();
-                ballMultiplier = ball.ballMultiplier;
+                ballValue = ball.GetTotalBallValue();
             }
 
-            int value = (int)(PocketValue * PointsMultiplier * ballMultiplier);
+            int value = (int)(PocketValue * PointsMultiplier * ballValue);
 
             PuntuactionManager.UpdatePuntuaction(value);
             BallManager.UpdateBalls();
