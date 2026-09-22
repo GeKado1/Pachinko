@@ -414,4 +414,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PocketValue: 1
   PointsMultiplier: 1
-  testCounter: {fileID: 7492515875423288045}
+  testCounter: {fileID: 0}
