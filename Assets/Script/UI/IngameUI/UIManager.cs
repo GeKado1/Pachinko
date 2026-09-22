@@ -9,10 +9,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI BallsText;
     public static bool BallOut;
 
+    [SerializeField] private TextMeshProUGUI QuoteText;
+
     void Start()
     {
         PointsText.text = "Points: " + PuntuactionManager.GetPunctuaction();
         PointsChanged = false;
+
+        QuoteText.text = "Points required: " + QuoteManager.GetPointsRequired();
 
         BallsText.text = "Balls Remaining: " + BallManager.GetBalls();
         BallOut = false;
