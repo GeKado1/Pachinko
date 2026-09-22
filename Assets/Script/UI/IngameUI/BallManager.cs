@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class BallManager : MonoBehaviour
 {
-    public int BallsOfTheLevel;
     private static int BallsRemaining;
 
     void Start()
     {
-        BallsRemaining = BallsOfTheLevel;
+        BallsRemaining = BallPoolManager.GetDefaultCapacity();
     }
 
     public static void UpdateBalls()

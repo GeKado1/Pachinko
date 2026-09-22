@@ -16,6 +16,9 @@ public class BallPoolManager : MonoBehaviour
 
     private ObjectPool<GameObject> pool;
 
+    //Variable para la funcion static de coger las bolas
+    private static int remaingBalls;
+
     private void Awake()
     {
         if (poolParent == null)
@@ -30,6 +33,8 @@ public class BallPoolManager : MonoBehaviour
             defaultCapacity: defaultCapacity,
             maxSize: maxSize
         );
+
+        remaingBalls = defaultCapacity;
     }
 
     private void Start()
@@ -111,5 +116,11 @@ public class BallPoolManager : MonoBehaviour
         }
 
         return ball;
+    }
+
+    //Retorna la capacidad de la pool para mostrarla como bolas restantes que tiene el jugador/que hay en el nivel
+    public static int GetDefaultCapacity()
+    {
+        return remaingBalls;
     }
 }
