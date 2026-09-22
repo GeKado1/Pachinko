@@ -65,5 +65,7 @@ public class BallLauncher : MonoBehaviour
         Vector2 finalForce = randomizedDirection * randomForceMultiplier;
 
         poolManager.SpawnBall(finalPosition, finalForce);
+
+        BallManager.UpdateBalls();
     }
 }
