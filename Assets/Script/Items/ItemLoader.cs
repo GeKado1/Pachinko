@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.IO;
-using Unity.Collections;
 using UnityEngine;
 
 public class ItemLoader : MonoBehaviour
@@ -10,6 +9,8 @@ public class ItemLoader : MonoBehaviour
     private CSVReader CSVReader;
 
     private List<Dictionary<string, string>> Data;
+
+    [SerializeField] private ItemManager ItemManager;
 
     void Awake()
     {
@@ -69,6 +70,7 @@ public class ItemLoader : MonoBehaviour
                     }
 
                     Item item = new Item(itemName, itemTag, itemDescription, itemStatValue);
+                    ItemManager.AllItems.Add(item);
                 }
             }
         }
