@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Prueba_Naz.unity
     guid: cc102f70e4bee1c4c818a31d7cd79106
+  - enabled: 1
+    path: Assets/Scenes/Shop.unity
+    guid: a7e1a5e38f1c66e4d9d06d5f72455a92
   m_configObjects: {}
