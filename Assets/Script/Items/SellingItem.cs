@@ -1,13 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class SellingItem : MonoBehaviour
+public class SellingItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private Item Item;
     private ItemManager ItemManager;
+
+    [SerializeField] private GameObject ItemDescription;
 
     [SerializeField] private TextMeshProUGUI PriceText;
 
@@ -21,11 +22,27 @@ public class SellingItem : MonoBehaviour
         {
             Item = ItemManager.GetItem();
 
+            if (PlayerPocket.Points < Item.ItemPrice)
+            {
+                PriceText.color = Color.red;
+                BuyButton.interactable = false;
+            }
+            else
+            {
+                PriceText.color = Color.black;
+            }
+
             PriceText.text = Item.ItemPrice.ToString() + " €";
         }
         else
         {
             Debug.Log("No se ha encontrado ningun ItemManager");
+        }
+
+        if (ItemManager != null)
+        {
+            ItemDescription.GetComponent<TextMeshProUGUI>().text = Item.ItemDescription;
+            ItemDescription.SetActive(false);
         }
     }
 
@@ -36,11 +53,28 @@ public class SellingItem : MonoBehaviour
             ItemManager.ActiveItems.Add(Item);
             BuyButton.interactable = false;
             BuyButton.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "SOLD";
+            PlayerPocket.Points -= (int)Item.ItemPrice;
         }
         else
         {
             //CAMBIAR PARA ALGO MÁS VISUAL O NS
             Debug.Log("eres demasiado pobre para este comprar este objeto");
+        }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (ItemDescription != null)
+        {
+            ItemDescription.SetActive(true);
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (ItemDescription != null)
+        {
+            ItemDescription.SetActive(false);
         }
     }
 }
