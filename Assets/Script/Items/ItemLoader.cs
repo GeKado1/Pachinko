@@ -50,6 +50,7 @@ public class ItemLoader : MonoBehaviour
                     string itemName = "";
                     string itemTag = "";
                     string itemDescription = "";
+                    float itemPrice = 0f;
                     float itemStatValue = 0f;
 
                     if (row.ContainsKey("ITEM_NAME"))
@@ -64,12 +65,16 @@ public class ItemLoader : MonoBehaviour
                     {
                         itemDescription = row["ITEM_DESCRIPTION"];
                     }
+                    if (row.ContainsKey("ITEM_PRICE"))
+                    {
+                        float.TryParse(row["ITEM_PRICE"], out itemPrice);
+                    }
                     if (row.ContainsKey("ITEM_STAT_VALUE"))
                     {
                         float.TryParse(row["ITEM_STAT_VALUE"], out itemStatValue);
                     }
 
-                    Item item = new Item(itemName, itemTag, itemDescription, itemStatValue);
+                    Item item = new Item(itemName, itemTag, itemDescription, itemPrice, itemStatValue);
                     ItemManager.AllItems.Add(item);
                 }
             }

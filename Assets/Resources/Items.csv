@@ -1,2 +1,2 @@
-KEY,ITEM_NAME,ITEM_TAG,ITEM_DESCRIPTION,ITEM_STAT_VALUE
-1,PruebaItem,AbsorbeAlmas,Te roba el alma al usarlo,12
+KEY,ITEM_NAME,ITEM_TAG,ITEM_DESCRIPTION,ITEM_PRICE,ITEM_STAT_VALUE
+1,PruebaItem,AbsorbeAlmas,Te roba el alma al usarlo,120,12
