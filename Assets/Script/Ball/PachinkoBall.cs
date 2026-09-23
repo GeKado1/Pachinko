@@ -15,14 +15,12 @@ public class PachinkoBall : MonoBehaviour
     // Método para devolver la bola al pool
     public void ReleaseToPool()
     {
+        if (!gameObject.activeInHierarchy) return;
+
         if (ballPool != null)
-        {
             ballPool.Release(gameObject);
-        }
         else
-        {
             Destroy(gameObject); // Fallback por si la bola no viene del pool
-        }
     }
 
     //Función para modificar el multiplicador de la bola

@@ -6,6 +6,7 @@ public class BallLauncher : MonoBehaviour
 {
     [Header("Referencias")]
     [SerializeField] private BallPoolManager poolManager;
+    [SerializeField] private BallAmmoManager ammoManager;
     [SerializeField] private Transform spawnPoint; 
 
     [Header("Configuración de Tecla y Fuerza")]
@@ -46,6 +47,9 @@ public class BallLauncher : MonoBehaviour
         if (poolManager == null)
             return;
 
+        if (!ammoManager.TryConsumeAmmo())
+            return;
+
         // 1. Variación en la Posición
         Vector3 basePosition = spawnPoint != null ? spawnPoint.position : transform.position;
         Vector3 randomPositionOffset = new Vector3(
@@ -64,7 +68,13 @@ public class BallLauncher : MonoBehaviour
         float randomForceMultiplier = Random.Range(1f - forceVariationPercent, 1f + forceVariationPercent);
         Vector2 finalForce = randomizedDirection * randomForceMultiplier;
 
-        poolManager.SpawnBall(finalPosition, finalForce);
+        GameObject spawnedBall = poolManager.SpawnBall(finalPosition, finalForce);
+
+        // Si el pool no pudo crear la bola (ej. límite de pantalla alcanzado), devolvemos la munición consumida
+        if (spawnedBall == null)
+        {
+            ammoManager.AddAmmo(1);
+        }
 
         BallManager.UpdateBalls();
     }

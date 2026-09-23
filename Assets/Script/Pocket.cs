@@ -4,6 +4,7 @@ using UnityEngine;
 public class Pocket : MonoBehaviour {
     [SerializeField] private int PocketValue;
     [SerializeField] private float PointsMultiplier = 1f;
+    [SerializeField] private BallAmmoManager ammoManager;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,6 +16,9 @@ public class Pocket : MonoBehaviour {
             {
                 ball.ReleaseToPool();
                 ballValue = ball.GetTotalBallValue();
+
+                if (ammoManager != null)
+                    ammoManager.NotifyBallDrained();
             }
 
             int value = (int)(PocketValue * PointsMultiplier * ballValue);

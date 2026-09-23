@@ -7,7 +7,11 @@ public class BallPoolManager : MonoBehaviour
     [SerializeField] private GameObject ballPrefab;
     [SerializeField] private int defaultCapacity = 50;
     [SerializeField] private int maxSize = 150; 
-    [SerializeField] private Transform poolParent; 
+    [SerializeField] private Transform poolParent;
+
+    [Header("Límite de Juego")]
+    [Tooltip("Número máximo de bolas que pueden estar en pantalla al mismo tiempo.")]
+    [SerializeField] private int maxActiveBallsInScreen = 20;
 
     [Header("Debug Info")]
     [SerializeField] private int activeBalls;
@@ -106,6 +110,10 @@ public class BallPoolManager : MonoBehaviour
     // disparar la bola desde el cañón
     public GameObject SpawnBall(Vector3 spawnPosition, Vector2 launchForce)
     {
+        // Límite de bolas en pantalla
+        if (pool.CountActive >= maxActiveBallsInScreen)
+            return null;
+
         GameObject ball = pool.Get();
         ball.transform.position = spawnPosition;
         ball.transform.rotation = Quaternion.identity;
@@ -119,8 +127,7 @@ public class BallPoolManager : MonoBehaviour
     }
 
     //Retorna la capacidad de la pool para mostrarla como bolas restantes que tiene el jugador/que hay en el nivel
-    public static int GetDefaultCapacity()
-    {
-        return remaingBalls;
-    }
+    public static int GetDefaultCapacity() => remaingBalls;
+
+    public int GetCountActiveBalls() => activeBalls;
 }
