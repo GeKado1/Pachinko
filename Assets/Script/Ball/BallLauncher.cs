@@ -89,6 +89,6 @@ public class BallLauncher : MonoBehaviour
             ammoManager.AddAmmo(currentMultiplier);
         }
 
-        BallManager.UpdateBalls(currentMultiplier);
+        BallManager.UpdateBalls(currentMultiplier, false);
     }
 }

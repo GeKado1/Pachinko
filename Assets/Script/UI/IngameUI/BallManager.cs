@@ -11,9 +11,17 @@ public class BallManager : MonoBehaviour
         BallsRemaining = BallPoolManager.GetDefaultCapacity();
     }
 
-    public static void UpdateBalls(int mult)
+    public static void UpdateBalls(int mult, bool isSum)
     {
-        BallsRemaining -= mult;
+        if (!isSum)
+        {
+            BallsRemaining -= mult;
+        }
+        else
+        {
+            BallsRemaining += mult;
+        }
+
         UIManager.BallOut = true;
     }
 
