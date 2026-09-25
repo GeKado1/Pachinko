@@ -14,8 +14,8 @@ public class Pocket : MonoBehaviour {
 
             if (collision.TryGetComponent<PachinkoBall>(out var ball))
             {
-                ball.ReleaseToPool();
                 ballValue = ball.GetTotalBallValue();
+                ball.ReleaseToPool();
 
                 if (ammoManager != null)
                     ammoManager.NotifyBallDrained();

@@ -24,15 +24,15 @@ public class BallAmmoManager : MonoBehaviour
         OnAmmoChanged?.Invoke(CurrentAmmo);
     }
 
-    public bool TryConsumeAmmo()
+    public bool TryConsumeAmmo(int amount)
     {
-        if (CurrentAmmo <= 0)
+        if (CurrentAmmo < amount)
         {
             CheckGameOverCondition();
             return false;
         }
 
-        CurrentAmmo--;
+        CurrentAmmo -= amount;
         OnAmmoChanged?.Invoke(CurrentAmmo);
         return true;
     }

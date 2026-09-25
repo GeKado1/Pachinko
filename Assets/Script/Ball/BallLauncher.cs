@@ -27,6 +27,7 @@ public class BallLauncher : MonoBehaviour
     [SerializeField] private float cooldownTime = 0.1f; 
     [SerializeField] private bool allowContinuousAutoFire = false; // ¿Permitir mantener pulsado?
 
+    private int currentMultiplier = 1;
     private float nextSpawnTime;
 
     private void Update()
@@ -42,12 +43,18 @@ public class BallLauncher : MonoBehaviour
         }
     }
 
+    public void SetMultiplier(int multiplierValue)
+    {
+        currentMultiplier = multiplierValue;
+        Debug.Log($"Modo de disparo cambiado a: x{currentMultiplier} (Coste: {currentMultiplier} bolas)");
+    }
+
     private void LaunchBall()
     {
         if (poolManager == null)
             return;
 
-        if (!ammoManager.TryConsumeAmmo())
+        if (!ammoManager.TryConsumeAmmo(currentMultiplier))
             return;
 
         // 1. Variación en la Posición
@@ -70,12 +77,18 @@ public class BallLauncher : MonoBehaviour
 
         GameObject spawnedBall = poolManager.SpawnBall(finalPosition, finalForce);
 
-        // Si el pool no pudo crear la bola (ej. límite de pantalla alcanzado), devolvemos la munición consumida
-        if (spawnedBall == null)
+        if (spawnedBall != null && spawnedBall.TryGetComponent<PachinkoBall>(out var ballComponent))
         {
-            ammoManager.AddAmmo(1);
+            ballComponent.Multiplier = currentMultiplier;
+
+            // Cambiar el color o tamaño de la bola según su valor para feedback visual
+        }
+        else if (spawnedBall == null)
+        {
+            // Si el disparo falló (límite de bolas en pantalla), devolvemos la munición exacta
+            ammoManager.AddAmmo(currentMultiplier);
         }
 
-        BallManager.UpdateBalls();
+        BallManager.UpdateBalls(currentMultiplier);
     }
 }

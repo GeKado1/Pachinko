@@ -7,6 +7,8 @@ public class PachinkoBall : MonoBehaviour
     [SerializeField] private float ballValue = 1f;
     [SerializeField] private float ballMultiplier = 1f;
 
+    public int Multiplier { get; set; } = 1;
+
     public void SetPool(IObjectPool<GameObject> pool)
     {
         ballPool = pool;
@@ -17,13 +19,14 @@ public class PachinkoBall : MonoBehaviour
     {
         if (!gameObject.activeInHierarchy) return;
 
+        Multiplier = 1;
+
         if (ballPool != null)
             ballPool.Release(gameObject);
         else
             Destroy(gameObject); // Fallback por si la bola no viene del pool
     }
 
-    //Función para modificar el multiplicador de la bola
     public void ModifyMultiplier(float modifierMult)
     {
         ballMultiplier += modifierMult;
@@ -31,6 +34,6 @@ public class PachinkoBall : MonoBehaviour
 
     public float GetTotalBallValue()
     {
-        return ballValue * ballMultiplier;
+        return ballValue * ballMultiplier * Multiplier;
     }
 }
