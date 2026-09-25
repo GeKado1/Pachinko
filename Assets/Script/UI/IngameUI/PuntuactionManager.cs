@@ -12,6 +12,12 @@ public class PuntuactionManager : MonoBehaviour
     public static void UpdatePuntuaction(int pointsToAdd)
     {
         Punctuaction += pointsToAdd;
+
+        if (Punctuaction <= 0)
+        {
+            Punctuaction = 0;
+        }
+
         UIManager.PointsChanged = true;
     }
 
