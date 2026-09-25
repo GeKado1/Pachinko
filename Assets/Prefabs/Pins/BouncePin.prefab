@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6224273821009020957}
   - component: {fileID: 4210244434830686834}
   - component: {fileID: 362351249488482878}
+  - component: {fileID: 1497345702997224364}
   m_Layer: 0
   m_Name: BouncePin
   m_TagString: Untagged
@@ -81,8 +82,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc04a4a332c3886448849bf7bce99618, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceForce: 7.5
-  resetVelocityOnBounce: 1
+  BounceForce: 12
+  ResetVelocityOnBounce: 1
+  Animation: {fileID: 1497345702997224364}
+--- !u!111 &1497345702997224364
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7749264837418364889}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 013bd1f7c121fab4cadaa29b7dc577a3, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 013bd1f7c121fab4cadaa29b7dc577a3, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &7861769302260687192
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,7 +128,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.33404025, y: 0.33404025, z: 0.33404025}
+  m_LocalScale: {x: 0.33404025, y: 0.3340403, z: 0.3340403}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6224273821009020957}
