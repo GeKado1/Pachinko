@@ -21,6 +21,9 @@ public class PachinkoBall : MonoBehaviour
 
         Multiplier = 1;
 
+        // RESETEAR ESCALA
+        transform.localScale = Vector3.one;
+
         if (ballPool != null)
             ballPool.Release(gameObject);
         else
