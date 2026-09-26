@@ -1,2 +1,3 @@
 KEY,ITEM_NAME,ITEM_TAG,ITEM_DESCRIPTION,ITEM_PRICE,ITEM_STAT_VALUE
-1,PruebaItem,AbsorbeAlmas,Te roba el alma al usarlo,120,12
+1,BuffPin,Pin,Te roba el alma al usarlo,120,12
+1,Bounce,BouncePin,Te roba el alma al usarlo,120,12

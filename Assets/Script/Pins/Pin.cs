@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Pin : MonoBehaviour
 {
+    public static Pin SelectedPin;
+
     [Header("Pins")]
     [Tooltip("Referencias a los diferentes GameObjects de Pins para activarlos y desactivarlos cuando toca")]
     [SerializeField] private GameObject NormalPin;
@@ -39,6 +41,12 @@ public class Pin : MonoBehaviour
     public void OnPinChange(string pinType)
     {
         NormalPin.SetActive(false);
+        AttractorPin.SetActive(false);
+        RejectorPin.SetActive(false);
+        BuffMultPin.SetActive(false);
+        NerfMultPin.SetActive(false);
+        DivisorPin.SetActive(false);
+
         switch (pinType)
         {
             case "AttractorPin":
@@ -56,7 +64,15 @@ public class Pin : MonoBehaviour
             case "DivisorPin":
                 DivisorPin.SetActive(true);
                 break;
+            default:
+                NormalPin.SetActive(true);
+                break;
         }
+    }
+
+    private void OnMouseDown()
+    {
+        SelectedPin = this;
     }
 
     //public void 

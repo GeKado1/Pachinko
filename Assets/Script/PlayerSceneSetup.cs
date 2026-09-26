@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerSceneSetup : MonoBehaviour
@@ -10,7 +11,7 @@ public class PlayerSceneSetup : MonoBehaviour
 
     [SerializeField] private ItemManager ItemManager;
     private List<Item> Items;
-    private List<string> ItemsType;
+    public List<Dictionary<string, string>> ItemsType { get; private set; }
 
     void Awake()
     {
@@ -23,11 +24,18 @@ public class PlayerSceneSetup : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
 
-        PinsToSetup = false;
+    void Start()
+    {
+        PinsToSetup = true;
         SetupCanvas.SetActive(false);
 
         Items = ItemManager.GetActiveItems();
+
+        ItemsType = Items
+                    .Select(item => new Dictionary<string, string> { { item.ItemTag, item.ItemName } })
+                    .ToList();
     }
 
     void Update()
