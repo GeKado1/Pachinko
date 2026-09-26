@@ -68,12 +68,12 @@ public class Pin : MonoBehaviour
                 NormalPin.SetActive(true);
                 break;
         }
+
+        PinSceneManager.AddToPinList(gameObject, pinType);
     }
 
     private void OnMouseDown()
     {
         SelectedPin = this;
     }
-
-    //public void 
 }
