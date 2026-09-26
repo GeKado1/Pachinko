@@ -27,4 +27,9 @@ public class ItemManager : MonoBehaviour
 
         return AllItems[randomItem];
     }
+
+    public List<Item> GetActiveItems()
+    {
+        return ActiveItems;
+    }
 }
