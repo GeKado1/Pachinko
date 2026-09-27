@@ -54,8 +54,14 @@ public class BallLauncher : MonoBehaviour
         if (poolManager == null)
             return;
 
-        if (!ammoManager.TryConsumeAmmo(currentMultiplier))
+        if (PuntuactionManager.GetPunctuaction() < currentMultiplier && currentMultiplier != 1)
             return;
+
+        if (!ammoManager.TryConsumeAmmo(1))
+            return;
+
+        if(currentMultiplier > 1)
+            PuntuactionManager.UpdatePuntuaction(-currentMultiplier);
 
         // 1. Variación en la Posición
         Vector3 basePosition = spawnPoint != null ? spawnPoint.position : transform.position;
@@ -86,9 +92,12 @@ public class BallLauncher : MonoBehaviour
         else if (spawnedBall == null)
         {
             // Si el disparo falló (límite de bolas en pantalla), devolvemos la munición exacta
-            ammoManager.AddAmmo(currentMultiplier);
+            ammoManager.AddAmmo(1);
+
+            if(currentMultiplier > 1)
+                PuntuactionManager.UpdatePuntuaction(currentMultiplier);
         }
 
-        BallManager.UpdateBalls(currentMultiplier, false);
+        BallManager.UpdateBalls(1, false);
     }
 }
