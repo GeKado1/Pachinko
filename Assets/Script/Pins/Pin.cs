@@ -35,6 +35,7 @@ public class Pin : MonoBehaviour
 
     public void OnPinChange(string pinType)
     {
+        NormalPin.SetActive(false);
         DeactiveAll();
 
         SetActiveComponent(pinType);
@@ -49,7 +50,6 @@ public class Pin : MonoBehaviour
 
     public void DeactiveAll()
     {
-        NormalPin.SetActive(false);
         AttractorPin.SetActive(false);
         RejectorPin.SetActive(false);
         BuffMultPin.SetActive(false);
@@ -59,6 +59,7 @@ public class Pin : MonoBehaviour
 
     public void SetActiveComponent(string pinType)
     {
+        NormalPin.SetActive(false);
         switch (pinType)
         {
             case "AttractorPin":
