@@ -54,7 +54,7 @@ public class BallLauncher : MonoBehaviour
         if (poolManager == null)
             return;
 
-        if (PuntuactionManager.GetPunctuaction() < currentMultiplier && currentMultiplier != 1)
+        if (PuntuactionManager.GetPunctuaction() < currentMultiplier)
             return;
 
         if (!ammoManager.TryConsumeAmmo(1))
@@ -94,8 +94,7 @@ public class BallLauncher : MonoBehaviour
             // Si el disparo falló (límite de bolas en pantalla), devolvemos la munición exacta
             ammoManager.AddAmmo(1);
 
-            if(currentMultiplier > 1)
-                PuntuactionManager.UpdatePuntuaction(currentMultiplier);
+            PuntuactionManager.UpdatePuntuaction(currentMultiplier);
         }
 
         BallManager.UpdateBalls(1, false);
