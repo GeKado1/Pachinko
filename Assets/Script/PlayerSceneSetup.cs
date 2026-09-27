@@ -31,7 +31,7 @@ public class PlayerSceneSetup : MonoBehaviour
         PinsToSetup = true;
         SetupCanvas.SetActive(false);
 
-        Items = ItemManager.GetActiveItems();
+        Items = ItemManager.GetPinItems();
 
         ItemsType = Items
                     .Select(item => new Dictionary<string, string> { { item.ItemTag, item.ItemName } })

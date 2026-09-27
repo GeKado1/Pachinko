@@ -901,19 +901,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8722752667892744674, guid: 16dce2c937dca5649947da66c01821eb, type: 3}
       propertyPath: AllItems.Array.data[0].ItemTag
-      value: AttractorPin
+      value: Pin
       objectReference: {fileID: 0}
     - target: {fileID: 8722752667892744674, guid: 16dce2c937dca5649947da66c01821eb, type: 3}
       propertyPath: AllItems.Array.data[0].ItemName
-      value: A
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722752667892744674, guid: 16dce2c937dca5649947da66c01821eb, type: 3}
-      propertyPath: ActiveItems.Array.data[0].ItemTag
       value: NerfMultPin
       objectReference: {fileID: 0}
     - target: {fileID: 8722752667892744674, guid: 16dce2c937dca5649947da66c01821eb, type: 3}
+      propertyPath: ActiveItems.Array.data[0].ItemTag
+      value: Pin
+      objectReference: {fileID: 0}
+    - target: {fileID: 8722752667892744674, guid: 16dce2c937dca5649947da66c01821eb, type: 3}
       propertyPath: ActiveItems.Array.data[0].ItemName
-      value: a
+      value: NerfMultPin
       objectReference: {fileID: 0}
     - target: {fileID: 8970416900452648806, guid: 16dce2c937dca5649947da66c01821eb, type: 3}
       propertyPath: m_Name

@@ -8,20 +8,23 @@ public class PinCanvas : MonoBehaviour
         if (Pin.SelectedPin != null && PlayerSceneSetup.instance != null)
         {
             var itemsType = PlayerSceneSetup.instance.ItemsType;
-
             if (itemsType != null && itemsType.Count > 0)
             {
                 var firstItem = itemsType[0];
 
-                string pinType = firstItem.Keys.First();
+                string tag = firstItem.Keys.First();
+                string pinType = firstItem.Values.First();
 
-                Debug.Log(pinType);
+                if (tag.Equals("Pin"))
+                {
+                    Debug.Log(pinType);
 
-                Pin.SelectedPin.OnPinChange(pinType);
+                    Pin.SelectedPin.OnPinChange(pinType);
 
-                itemsType.RemoveAt(0);
+                    itemsType.RemoveAt(0);
 
-                PlayerSceneSetup.PinsToSetup = false;
+                    PlayerSceneSetup.PinsToSetup = false;
+                }
             }
             else
             {

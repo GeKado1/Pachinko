@@ -28,8 +28,17 @@ public class ItemManager : MonoBehaviour
         return AllItems[randomItem];
     }
 
-    public List<Item> GetActiveItems()
+    public List<Item> GetPinItems()
     {
-        return ActiveItems;
+        List<Item> list = new List<Item>();
+
+        foreach (Item item in ActiveItems) {
+            if (item.ItemTag.Equals("Pin"))
+            {
+                list.Add(item);
+            }
+        }
+
+        return list;
     }
 }
