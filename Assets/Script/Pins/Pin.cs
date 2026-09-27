@@ -18,12 +18,7 @@ public class Pin : MonoBehaviour
 
     void Awake()
     {
-        AttractorPin.SetActive(false);
-        RejectorPin.SetActive(false);
-        BuffMultPin.SetActive(false);
-        NerfMultPin.SetActive(false);
-        DivisorPin.SetActive(false);
-        PinCanvas.SetActive(false);
+        DeactiveAll();
     }
 
     void Update()
@@ -40,13 +35,30 @@ public class Pin : MonoBehaviour
 
     public void OnPinChange(string pinType)
     {
+        DeactiveAll();
+
+        SetActiveComponent(pinType);
+
+        PinSceneManager.AddToPinList(gameObject, pinType);
+    }
+
+    private void OnMouseDown()
+    {
+        SelectedPin = this;
+    }
+
+    public void DeactiveAll()
+    {
         NormalPin.SetActive(false);
         AttractorPin.SetActive(false);
         RejectorPin.SetActive(false);
         BuffMultPin.SetActive(false);
         NerfMultPin.SetActive(false);
         DivisorPin.SetActive(false);
+    }
 
+    public void SetActiveComponent(string pinType)
+    {
         switch (pinType)
         {
             case "AttractorPin":
@@ -68,12 +80,5 @@ public class Pin : MonoBehaviour
                 NormalPin.SetActive(true);
                 break;
         }
-
-        PinSceneManager.AddToPinList(gameObject, pinType);
-    }
-
-    private void OnMouseDown()
-    {
-        SelectedPin = this;
     }
 }

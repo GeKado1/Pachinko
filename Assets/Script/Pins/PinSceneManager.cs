@@ -1,11 +1,27 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PinSceneManager : MonoBehaviour
 {
     public static PinSceneManager instance { get; private set; }
-    private static List<Dictionary<Transform, string>> Pins;
+
+    public struct PinData
+    {
+        public Vector3 Position;
+        public string PinType;
+
+        public PinData(Vector3 position, string pinType)
+        {
+            Position = position;
+            PinType = pinType;
+        }
+    }
+
+    private static List<PinData> SavedPins = new List<PinData>();
+
+    [Tooltip("Tolerancia para encontrar los gameobjects pins")]
+    [SerializeField] private float SearchRadius = 0.2f;
 
     void Awake()
     {
@@ -17,42 +33,72 @@ public class PinSceneManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
-
-            SetPins();
+            return;
         }
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        SetPins();
     }
 
     public static void AddToPinList(GameObject pinToAdd, string pinType)
     {
-        Pins.Add(new Dictionary<Transform, string> { { pinToAdd.transform, pinType } });
+        SavedPins.Add(new PinData(pinToAdd.transform.position, pinType));
     }
 
     private void SetPins()
     {
-        foreach (var pin in Pins)
+        foreach (var pinData in SavedPins)
         {
-            string pinType = pin.Values.First();
+            Collider[] hits = Physics.OverlapSphere(pinData.Position, SearchRadius);
 
-            switch (pinType)
+            GameObject foundObject = null;
+            if (hits.Length > 0)
             {
-                case "AttractorPin":
-                    
-                    break;
-                case "RejectorPin":
-                    
-                    break;
-                case "BuffMultPin":
-                    
-                    break;
-                case "NerfMultPin":
-                    
-                    break;
-                case "DivisorPin":
-                    
-                    break;
-                default:
-                    
-                    break;
+                foundObject = hits[0].gameObject;
+            }
+
+            if (foundObject != null)
+            {
+                Pin pin = foundObject.GetComponent<Pin>();
+
+                if (pin != null)
+                {
+                    pin.DeactiveAll();
+
+                    switch (pinData.PinType)
+                    {
+                        case "AttractorPin":
+                            pin.SetActiveComponent(pinData.PinType);
+                            break;
+                        case "RejectorPin":
+                            pin.SetActiveComponent(pinData.PinType);
+                            break;
+                        case "BuffMultPin":
+                            pin.SetActiveComponent(pinData.PinType);
+                            break;
+                        case "NerfMultPin":
+                            pin.SetActiveComponent(pinData.PinType);
+                            break;
+                        case "DivisorPin":
+                            pin.SetActiveComponent(pinData.PinType);
+                            break;
+                        default:
+                            pin.SetActiveComponent("NormalPin");
+                            break;
+                    }
+                }
             }
         }
     }
