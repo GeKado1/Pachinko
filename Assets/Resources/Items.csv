@@ -1,3 +1,16 @@
 KEY,ITEM_NAME,ITEM_TAG,ITEM_DESCRIPTION,ITEM_PRICE,ITEM_STAT_VALUE
-1,BuffPin,Pin,Te roba el alma al usarlo,120,12
-1,Bounce,BouncePin,Te roba el alma al usarlo,120,12
+1,AttractorPin,Pin,Atrae las bolas ligeramente hacia su posición en un pequeño radio,120,12
+2,RejectorPin,Pin,Expulsa las bolas ligeramente de su posición en un pequeño radio,120,12
+3,BuffPin,Pin,Al colisionar una bola con el se le suma un 0'25% del multiplicador base a la bola. Solo se activa una vez por bola rebotada en pin,120,120
+4,NerfPin,Pin,Al colisionar una bola con él se le resta un 0'25% del multiplicador base a la bola. Solo se activa una vez por bola rebotada en pin,0,0
+5,DivisorPin,Pin, Divide la bola en x donde x es el valor de la bola mayor (x1: se hace mas pequeña - x2: la bola se divide en 2 pequeñas de 1 - x5: la bola se divide en 5 bolas pequeñas de 1 - x10: la bola se divide en 10 bolas pequeñas de 1),1,1
+6,GoldenBouncer,Bouncer,Te da 1 bola por cada vez que rebota una pelota en ella ,1,1
+7,StarAce,PocketPasive,Aumenta el multiplicador en 2 de todos los agujeros,10,1
+8,HearthAce,PocketPasive,Aumenta el multiplicador un 0'5 de los agujeros con corazones,10,1
+9,DiamondAce,PocketPasive,Aumenta el multiplicador un 0'5 de los agujeros con diamantes,1,1
+10,ClubsAce,PocketPasive,Aumenta el multiplicador un 0'5 de los agujeros con trevoles,1,1
+11,SpadesAce,PocketPasive,Aumenta el multiplicador un 0'5 de los agujeros con picas,1,1
+12,RedPokerSuit,PocketPasive,Aumenta x2 el multiplicador de los agujeros rojos y disminuye el de los tréboles x3. En el caso de las picas aumenta en un x4,1,1
+13,BlackPokerSuit,PocketPasive,Aumenta x2 el multiplicador de los tréboles y disminuye el de las Picas x2 y el de los palos rojos X3,1,1
+14,PopCorn,LauncherPasive,1 de cada 4 bolas (0'25%) tendrá la mitad de tamaño,1,1
+15. MilkShake,LauncherPasive,Al lanzar una bola con valor 1 lanzas 2 bolas en vez de una(solo cuenta como un unico gasto de bolas lanzadas). No se stackea,1,1
