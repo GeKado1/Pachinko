@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class PuntuactionManager : MonoBehaviour
 {
+    [SerializeField] private int PUNTUATION = 20;
     private static int Punctuaction;
 
     void Start()
     {
-        Punctuaction = 0;
+        Punctuaction = PUNTUATION;
     }
 
     public static void UpdatePuntuaction(int pointsToAdd)
