@@ -1,4 +1,4 @@
-KEY,ITEM_NAME,ITEM_TAG,ITEM_DESCRIPTION,ITEM_PRICE,NUMBER_STATS_INVOLVED,ITEM_STAT_VALUE
+KEY,ITEM_NAME,ITEM_TAG,ITEM_DESCRIPTION,ITEM_PRICE,NUMBER_STATS_INVOLVED,ITEM_STATS_VALUE
 1,AttractorPin,Pin,Atrae las bolas ligeramente hacia su posición en un pequeño radio,120,12
 2,RejectorPin,Pin,Expulsa las bolas ligeramente de su posición en un pequeño radio,120,12
 3,BuffPin,Pin,Al colisionar una bola con el se le suma un 0'25% del multiplicador base a la bola. Solo se activa una vez por bola rebotada en pin,120,1,0.25
