@@ -10,6 +10,7 @@ public class ItemManager : MonoBehaviour
     public static ItemManager Instance { get; private set; }
 
     private List<Pocket> PocketList = new List<Pocket>();
+    private List<GameObject> BouncePinList = new List<GameObject>();
 
     void Awake()
     {
@@ -37,8 +38,10 @@ public class ItemManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         SearchPockets();
-
         ModifyPockets();
+
+        SearchBouncePins();
+        UpgradeBouncePins();
     }
 
     private void SearchPockets()
@@ -138,6 +141,30 @@ public class ItemManager : MonoBehaviour
                             }
                         }
                         break;
+                }
+            }
+        }
+    }
+
+    private void SearchBouncePins()
+    {
+        GameObject[] bouncePins = GameObject.FindGameObjectsWithTag("BouncePin");
+
+        foreach (GameObject bouncePin in bouncePins)
+        {
+            BouncePinList.Add(bouncePin);
+        }
+    }
+
+    private void UpgradeBouncePins()
+    {
+        foreach(Item item in ActiveItems)
+        {
+            if (item.ItemTag.Equals("Bouncer"))
+            {
+                foreach(GameObject bouncePin in BouncePinList)
+                {
+                    bouncePin.GetComponent<BouncePinController>().HaveGoldUpgrade();
                 }
             }
         }

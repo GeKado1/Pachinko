@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class GoldBouncePin : BouncePin
 {
-    [Tooltip("Referencia para poder añadir más bolas cuando una bola rebota en el Gold Bounce Pin")]
-    [SerializeField] private BallAmmoManager AmmoManager;
+    [Tooltip("Referencia para sumar bolas puntuación cuando una bola rebota en el Gold Bounce Pin")]
+    [SerializeField] private PuntuactionManager PuntuactionManager;
 
     protected override void OnCollisionEnter2D(Collision2D collision)
     {
@@ -13,7 +13,6 @@ public class GoldBouncePin : BouncePin
 
     private void AddBall()
     {
-        AmmoManager.AddAmmo(1);
-        BallManager.UpdateBalls(1, true);
+        PuntuactionManager.UpdatePuntuaction(1);
     }
 }

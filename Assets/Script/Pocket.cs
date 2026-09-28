@@ -1,7 +1,4 @@
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Pocket : MonoBehaviour {
     [SerializeField] private int PocketValue;
