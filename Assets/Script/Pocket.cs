@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Pocket : MonoBehaviour {
     [SerializeField] private int PocketValue;
@@ -8,8 +10,8 @@ public class Pocket : MonoBehaviour {
 
     [Header("Parametros de definición del Pocket")]
     [Tooltip("Palo")]
-    [SerializeField] private string Suit;
-    [SerializeField] private string Color;
+    public string Suit;
+    public string Color;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -26,24 +28,22 @@ public class Pocket : MonoBehaviour {
                     ammoManager.NotifyBallDrained();
             }
 
-            int value = (int)(PocketValue * PointsMultiplier * ballValue);
+            int value = Mathf.RoundToInt(PocketValue * PointsMultiplier * ballValue);
 
             PuntuactionManager.UpdatePuntuaction(value);
         }
     }
 
-    public void ModifyMult(float mult, bool AddOrSubstract)
+    public void ModifyMult(float mult)
     {
-        if (AddOrSubstract)
+        PointsMultiplier += mult;
+    }
+
+    public void ModifyMult(float mult, bool multiplyOrDivide)
+    {
+        if (multiplyOrDivide)
         {
-            if (mult < 1)
-            {
-                PointsMultiplier += mult;
-            }
-            else
-            {
-                PointsMultiplier *= mult;
-            }
+            PointsMultiplier *= mult;
         }
         else
         {

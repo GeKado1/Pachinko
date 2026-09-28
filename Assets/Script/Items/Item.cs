@@ -9,7 +9,7 @@ public class Item
     public string ItemDescription;
     public float ItemPrice;
     public int ItemStatsInvolved;
-    public List<int> ValueOfStats;
+    public List<float> ValueOfStats;
 
     public Item(string itemName, string itemTag, string itemDescription, float itemPrice, int itemStatsInvolved, string statsValue)
     {
@@ -19,12 +19,12 @@ public class Item
         ItemPrice = itemPrice;
         ItemStatsInvolved = itemStatsInvolved;
 
-        ValueOfStats = new List<int>();
+        ValueOfStats = new List<float>();
 
         string[] statValues = statsValue.Split('-');
         foreach (string str in statValues)
         {
-            if (int.TryParse(str, out int value))
+            if (float.TryParse(str, out float value))
             { 
                 ValueOfStats.Add(value);
             }
