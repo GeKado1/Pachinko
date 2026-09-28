@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI QuoteText;
 
+    public static bool NextRoundUpdate = false;
+
     void Start()
     {
         PointsText.text = "Points: " + PuntuactionManager.GetPunctuaction();
@@ -30,9 +32,10 @@ public class UIManager : MonoBehaviour
             PointsChanged = false;
         }
 
-        if (BallOut)
+        if (BallOut || NextRoundUpdate)
         {
             BallsText.text = "Balls Remaining: " + BallManager.GetBalls();
+            NextRoundUpdate = false;
         }
     }
 }

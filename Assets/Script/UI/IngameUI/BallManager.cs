@@ -15,7 +15,7 @@ public class BallManager : MonoBehaviour
     {
         if (!isSum)
         {
-            BallsRemaining -= mult;
+            BallsRemaining = Mathf.Max(0, BallsRemaining - mult);
         }
         else
         {
@@ -28,5 +28,10 @@ public class BallManager : MonoBehaviour
     public static int GetBalls()
     {
         return BallsRemaining;
+    }
+
+    public static void ResetBallsRemaining()
+    {
+        BallsRemaining = BallPoolManager.GetDefaultCapacity();
     }
 }

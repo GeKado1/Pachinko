@@ -57,11 +57,16 @@ public class BallLauncher : MonoBehaviour
         if (PuntuactionManager.GetPunctuaction() < currentMultiplier)
             return;
 
+        if (ammoManager != null && ammoManager.CurrentAmmo <= 0)
+            return;
+
+        if (BallManager.GetBalls() <= 0)
+            return;
+
         if (!ammoManager.TryConsumeAmmo(1))
             return;
 
-        if(currentMultiplier > 1)
-            PuntuactionManager.UpdatePuntuaction(-currentMultiplier);
+        PuntuactionManager.UpdatePuntuaction(-currentMultiplier);
 
         // 1. Variación en la Posición
         Vector3 basePosition = spawnPoint != null ? spawnPoint.position : transform.position;
@@ -87,6 +92,7 @@ public class BallLauncher : MonoBehaviour
         {
             ballComponent.Multiplier = currentMultiplier;
 
+            BallManager.UpdateBalls(1, false);
             // Cambiar el color o tamaño de la bola según su valor para feedback visual
         }
         else if (spawnedBall == null)
@@ -97,6 +103,5 @@ public class BallLauncher : MonoBehaviour
             PuntuactionManager.UpdatePuntuaction(currentMultiplier);
         }
 
-        BallManager.UpdateBalls(1, false);
     }
 }
