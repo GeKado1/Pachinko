@@ -4,62 +4,55 @@ using UnityEngine;
 
 public class TransitionManager : MonoBehaviour
 {
-    [Header("UI de Transición")]
-    [Tooltip("El CanvasGroup que contiene la imagen de fondo (ej: pantalla negra).")]
-    [SerializeField] private CanvasGroup fadeCanvasGroup;
-    [SerializeField] private float fadeDuration = 0.5f;
-
     [Header("Contenedores Principales")]
-    [SerializeField] private GameObject gameContainer; 
+    [SerializeField] private GameObject gameContainer;
     [SerializeField] private GameObject shopContainer;
 
     [Header("Esconder UI en Shop")]
     [SerializeField] private List<GameObject> hideUIinShop = new List<GameObject>();
 
     [Header("Referencias de Juego")]
-    [SerializeField] private BallAmmoManager ammoManager; 
+    [SerializeField] private BallAmmoManager ammoManager;
     [SerializeField] private int ammoPerRound = 20;
+
+    [Header("Configuración de Cámara")]
+    [SerializeField] private Transform cameraTransform;
+    [SerializeField] private Transform gameCameraTarget;
+    [SerializeField] private Transform shopCameraTarget;
+    [SerializeField] private float cameraMoveDuration = 0.5f;
 
     private void Start()
     {
-        fadeCanvasGroup.alpha = 0f;
-        fadeCanvasGroup.blocksRaycasts = false;
-
         gameContainer.SetActive(true);
         shopContainer.SetActive(false);
+
+        // Colocar la cámara en la posición inicial del juego al arrancar
+        if (cameraTransform != null && gameCameraTarget != null)
+        {
+            cameraTransform.position = gameCameraTarget.position;
+            cameraTransform.rotation = gameCameraTarget.rotation;
+        }
     }
 
     public void TriggerTransitionToShop()
     {
-        StartCoroutine(TransitionRoutine(gameContainer, shopContainer));
+        StopAllCoroutines();
+        StartCoroutine(TransitionRoutine(gameContainer, shopContainer, shopCameraTarget));
     }
 
     public void TriggerTransitionToGame()
     {
-        StartCoroutine(TransitionRoutine(shopContainer, gameContainer));
+        StopAllCoroutines();
+        StartCoroutine(TransitionRoutine(shopContainer, gameContainer, gameCameraTarget));
     }
 
-    private IEnumerator TransitionRoutine(GameObject fromContainer, GameObject toContainer)
+    private IEnumerator TransitionRoutine(GameObject fromContainer, GameObject toContainer, Transform targetCameraTransform)
     {
-        // Bloquear clics durante la transición para evitar bugs
-        fadeCanvasGroup.blocksRaycasts = true;
-
-        // Fade Out
-        float timer = 0f;
-        while (timer < fadeDuration)
-        {
-            timer += Time.deltaTime;
-            fadeCanvasGroup.alpha = Mathf.Lerp(0f, 1f, timer / fadeDuration);
-            yield return null; 
-        }
-        fadeCanvasGroup.alpha = 1f;
-
+        // Cambiar los contenedores de UI al iniciar el movimiento
         fromContainer.SetActive(false);
         toContainer.SetActive(true);
 
-        yield return new WaitForSeconds(0.2f);
-
-        if(fromContainer == shopContainer)
+        if (fromContainer == shopContainer)
         {
             BallManager.ResetBallsRemaining();
             UIManager.NextRoundUpdate = true;
@@ -69,21 +62,35 @@ public class TransitionManager : MonoBehaviour
         }
         else
         {
-            foreach(GameObject gO in hideUIinShop)
+            foreach (GameObject gO in hideUIinShop)
                 gO.SetActive(false);
         }
 
-            //  Fade In
-            timer = 0f;
-        while (timer < fadeDuration)
+        // Mover y rotar la cámara suavemente hacia el destino
+        if (cameraTransform != null && targetCameraTransform != null)
         {
-            timer += Time.deltaTime;
-            fadeCanvasGroup.alpha = Mathf.Lerp(1f, 0f, timer / fadeDuration);
-            yield return null;
-        }
+            float camTimer = 0f;
+            Vector3 startPos = cameraTransform.position;
+            Quaternion startRot = cameraTransform.rotation;
 
-        fadeCanvasGroup.alpha = 0f;
-        fadeCanvasGroup.blocksRaycasts = false;
+            while (camTimer < cameraMoveDuration)
+            {
+                camTimer += Time.deltaTime;
+                float t = camTimer / cameraMoveDuration;
+
+                // Suavizado
+                t = Mathf.SmoothStep(0f, 1f, t);
+
+                cameraTransform.position = Vector3.Lerp(startPos, targetCameraTransform.position, t);
+                cameraTransform.rotation = Quaternion.Slerp(startRot, targetCameraTransform.rotation, t);
+
+                yield return null;
+            }
+
+            // Asegurar posición y rotación final
+            cameraTransform.position = targetCameraTransform.position;
+            cameraTransform.rotation = targetCameraTransform.rotation;
+        }
     }
 
     public void StartNextRound()
