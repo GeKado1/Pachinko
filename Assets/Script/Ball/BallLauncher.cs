@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BallLauncher : MonoBehaviour
 {
@@ -28,7 +29,14 @@ public class BallLauncher : MonoBehaviour
     [Header("Animaciones Boton")]
     [SerializeField] private Animation buttonAnimation;
 
+    [Header("Sprites Boton")]
+    [SerializeField] private List<Sprite> buttons = new List<Sprite>();
+
+    [Header("Valor Boton Multiplier")]
+    [SerializeField] private List<int> buttonMultiplierValue = new List<int>();
+
     private int currentMultiplier = 1;
+    private int numOfMultiplierValue = 0;
     private float nextSpawnTime;
 
     public void BottonLaunchBall()
@@ -42,9 +50,15 @@ public class BallLauncher : MonoBehaviour
         }
     }
 
-    public void SetMultiplier(int multiplierValue)
+    public void SetMultiplier(Image spriteButton)
     {
-        currentMultiplier = multiplierValue;
+        if (numOfMultiplierValue == buttonMultiplierValue.Count - 1)
+            numOfMultiplierValue = 0;
+        else
+            numOfMultiplierValue++;
+
+        currentMultiplier = buttonMultiplierValue[numOfMultiplierValue];
+        spriteButton.sprite = buttons[numOfMultiplierValue];
         Debug.Log($"Modo de disparo cambiado a: x{currentMultiplier} (Coste: {currentMultiplier} bolas)");
     }
 
