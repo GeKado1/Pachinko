@@ -1,0 +1,884 @@
+fileFormatVersion: 2
+guid: 7047b5376414cbe43bc30f17c116a3ed
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_0
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 847
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d28b473e7ccd4f489c6bd0fe02c1111
+      internalID: 1043507271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_1
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 861
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d56bc7b7cdea6947905b72d458bbf8a
+      internalID: -1325449602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_2
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 846
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d73bbe1b23ba4b64c86a77cf25a260b4
+      internalID: -1184715947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_3
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 804
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 513f3a90fe454c349a50d188562f0cde
+      internalID: -137562522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_4
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 802
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21b96bb5954d64245a3bfedc50a1a1ce
+      internalID: 1182261135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 742
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 130ff1225c577924c8f9f108128bf9b7
+      internalID: -1214856859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_6
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 742
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbc69cc43ce41d949b8cab1f1b186179
+      internalID: 1543652608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_7
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 683
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2d890cabae503c44ab8d6b3717bf632
+      internalID: -1019043701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_8
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 677
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c56ce2668d95fbb478c48670373b3c19
+      internalID: 1605436148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_9
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 639
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77318aac2c9a30347adfa798c6f9df4f
+      internalID: 385950470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_10
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 620
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5ca6de541e3e1640aa6dcd11608eaef
+      internalID: 125439459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_11
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 637
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25c2ed510528cfb47aa01a3e94ce75f0
+      internalID: 1760232280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_12
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 526
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31a1b6a554ae2184f81e1c2e152fa1e3
+      internalID: 901306512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_13
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 549
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f820555d21961244b5eac231df7ba99
+      internalID: 1102028816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_14
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 548
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dc823cf40b583546884363939636d48
+      internalID: 1529754903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_15
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 524
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3a4160e69faac7439ec5583ce5a7f97
+      internalID: -1405754500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_16
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 475
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24c71477bae279d4b860d1b8ba4ba86d
+      internalID: -393037291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_17
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 475
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 938694cabe098854886c6ea8272857a7
+      internalID: -174609708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_18
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 417
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d2aa96a9b4849e43a6b44f073e86991
+      internalID: -1750973636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_19
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 417
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdf0c3c70c777944a8689fd67e52276a
+      internalID: -952012519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_20
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 358
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22c33d0978d2b814495e75d148a6177e
+      internalID: 55166125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_21
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 358
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d712af091e09e1468d9dce919c236c3
+      internalID: 363557575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_22
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 301
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38f1474697ef86a4190721f01a63de96
+      internalID: 286025034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_23
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 301
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fe458f7e762cd84cb5fe305a0f00046
+      internalID: -799447603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_24
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 240
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e326ff7927a6b5746a739ea01be58fa1
+      internalID: -1640922677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_25
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 240
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cc181e5a272e734e8a7a11cb6c7b5bf
+      internalID: -1649016583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_26
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 178
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a6343dd2e1891746959dbb6851fce55
+      internalID: 37060005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_27
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 180
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cec87347c33f5b548b82a0c4272a3621
+      internalID: -1954237590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_28
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 117
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acc6c5ef91068fb4e94d801b4bc39e50
+      internalID: 959411897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_29
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 117
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51ae14d7b6737344e93f87bf366d98bc
+      internalID: -250771105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_30
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 53
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45477986bf244cf4cbe252a11b3ca2c6
+      internalID: 2147107954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_31
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 53
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b677636a46068b042bc62311f4b20474
+      internalID: -50280746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_32
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 6
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd495f4e17f1c4f4d89feef87c6c12ed
+      internalID: 1372394723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_33
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 0
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43a382860fa7b3d418e191ef4c901d22
+      internalID: 1153084485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luz_Tienda_Apagada_34
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 6
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d35cff38f191f545a9db2e67431d9d8
+      internalID: -1383686901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Luz_Tienda_Apagada_0: 1043507271
+      Luz_Tienda_Apagada_1: -1325449602
+      Luz_Tienda_Apagada_10: 125439459
+      Luz_Tienda_Apagada_11: 1760232280
+      Luz_Tienda_Apagada_12: 901306512
+      Luz_Tienda_Apagada_13: 1102028816
+      Luz_Tienda_Apagada_14: 1529754903
+      Luz_Tienda_Apagada_15: -1405754500
+      Luz_Tienda_Apagada_16: -393037291
+      Luz_Tienda_Apagada_17: -174609708
+      Luz_Tienda_Apagada_18: -1750973636
+      Luz_Tienda_Apagada_19: -952012519
+      Luz_Tienda_Apagada_2: -1184715947
+      Luz_Tienda_Apagada_20: 55166125
+      Luz_Tienda_Apagada_21: 363557575
+      Luz_Tienda_Apagada_22: 286025034
+      Luz_Tienda_Apagada_23: -799447603
+      Luz_Tienda_Apagada_24: -1640922677
+      Luz_Tienda_Apagada_25: -1649016583
+      Luz_Tienda_Apagada_26: 37060005
+      Luz_Tienda_Apagada_27: -1954237590
+      Luz_Tienda_Apagada_28: 959411897
+      Luz_Tienda_Apagada_29: -250771105
+      Luz_Tienda_Apagada_3: -137562522
+      Luz_Tienda_Apagada_30: 2147107954
+      Luz_Tienda_Apagada_31: -50280746
+      Luz_Tienda_Apagada_32: 1372394723
+      Luz_Tienda_Apagada_33: 1153084485
+      Luz_Tienda_Apagada_34: -1383686901
+      Luz_Tienda_Apagada_4: 1182261135
+      Luz_Tienda_Apagada_5: -1214856859
+      Luz_Tienda_Apagada_6: 1543652608
+      Luz_Tienda_Apagada_7: -1019043701
+      Luz_Tienda_Apagada_8: 1605436148
+      Luz_Tienda_Apagada_9: 385950470
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
