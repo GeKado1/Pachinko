@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        PointsText.text = "Points: " + PuntuactionManager.GetPunctuaction();
+        PointsText.text = PuntuactionManager.GetPunctuaction() + " x";
         PointsChanged = false;
 
         QuoteText.text = "Points required: " + QuoteManager.GetPointsRequired();
@@ -28,7 +28,7 @@ public class UIManager : MonoBehaviour
     {
         if (PointsChanged)
         {
-            PointsText.text = "Points: " + PuntuactionManager.GetPunctuaction();
+            PointsText.text = PuntuactionManager.GetPunctuaction() + " x";
             PointsChanged = false;
         }
 
