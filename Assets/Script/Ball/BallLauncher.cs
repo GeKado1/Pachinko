@@ -27,6 +27,10 @@ public class BallLauncher : MonoBehaviour
     [SerializeField] private float cooldownTime = 0.1f; 
     [SerializeField] private bool allowContinuousAutoFire = false; // ¿Permitir mantener pulsado?
 
+    [Header("Animaciones Boton")]
+    [SerializeField] private Animation buttonAnimation;
+
+
     private int currentMultiplier = 1;
     private float nextSpawnTime;
 
@@ -49,6 +53,8 @@ public class BallLauncher : MonoBehaviour
         {
             LaunchBall();
             nextSpawnTime = Time.time + cooldownTime;
+            buttonAnimation.Rewind();
+            buttonAnimation.Play();
         }
     }
 
