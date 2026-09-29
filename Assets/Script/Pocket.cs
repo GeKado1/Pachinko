@@ -47,4 +47,8 @@ public class Pocket : MonoBehaviour {
             PointsMultiplier /= mult;
         }
     }
+
+    public float GetPocketValue() {
+        return PocketValue;
+    }
 }

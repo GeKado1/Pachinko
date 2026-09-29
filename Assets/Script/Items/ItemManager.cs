@@ -13,6 +13,8 @@ public class ItemManager : MonoBehaviour
     private List<Pocket> PocketList = new List<Pocket>();
     private List<GameObject> BouncePinList = new List<GameObject>();
 
+    [SerializeField] private SuitsMults SuitsMults;
+
     void Awake()
     {
         if (Instance == null)
@@ -65,59 +67,88 @@ public class ItemManager : MonoBehaviour
         {
             if (item.ItemTag.Equals("PocketPasive"))
             {
+                float mult = 0f;
                 //Sorry por el switch, se tendria que modificar o hacer otro csv para los pocket items para evitarlo (y no nos vamos engañar, es trabajo extra y me da flojera y la jam es este miercoles, no da tiempo)
                 switch (item.ItemName)
                 {
                     case "HearthAce":
+                        mult = 0f;
+
                         foreach (Pocket pocket in PocketList)
                         {
                             if (pocket.Suit.Equals("Hearth"))
                             {
                                 pocket.ModifyMult(item.ValueOfStats[0]);
+                                mult = pocket.GetPocketValue();
                             }
                         }
+
+                        SuitsMults.ModifyText("Hearth", mult);
                         break;
                     case "DiamondAce":
+                        mult = 0f;
+
                         foreach (Pocket pocket in PocketList)
                         {
                             if (pocket.Suit.Equals("Diamond"))
                             {
                                 pocket.ModifyMult(item.ValueOfStats[0]);
+                                mult = pocket.GetPocketValue();
                             }
                         }
+
+                        SuitsMults.ModifyText("Diamond", mult);
                         break;
                     case "ClubsAce":
+                        mult = 0f;
+
                         foreach (Pocket pocket in PocketList)
                         {
                             if (pocket.Suit.Equals("Clubs"))
                             {
                                 pocket.ModifyMult(item.ValueOfStats[0]);
+                                mult = pocket.GetPocketValue();
                             }
                         }
+
+                        SuitsMults.ModifyText("Clubs", mult);
                         break;
                     case "SpadesAce":
+                        mult = 0f;
+
                         foreach (Pocket pocket in PocketList)
                         {
                             if (pocket.Suit.Equals("Spades"))
                             {
                                 pocket.ModifyMult(item.ValueOfStats[0]);
+                                mult = pocket.GetPocketValue();
                             }
                         }
+
+                        SuitsMults.ModifyText("Spades", mult);
                         break;
                     case "RedPocketSuit":
                         foreach (Pocket pocket in PocketList)
                         {
+                            mult = 0f;
                             if (pocket.Color.Equals("Red")) {
                                 pocket.ModifyMult(item.ValueOfStats[0], true);
+                                mult = pocket.GetPocketValue();
+                                SuitsMults.ModifyText("Hearth", mult);
+                                SuitsMults.ModifyText("Diamond", mult);
                             }
                             else
                             {
                                 if (pocket.Suit.Equals("Clubs"))
                                 {
                                     pocket.ModifyMult(item.ValueOfStats[1], false);
+                                    mult = pocket.GetPocketValue();
+                                    SuitsMults.ModifyText("Clubs", mult);
                                 }
                                 else if (pocket.Suit.Equals("Spades")) {
                                     pocket.ModifyMult(item.ValueOfStats[2], true);
+                                    mult = pocket.GetPocketValue();
+                                    SuitsMults.ModifyText("Spades", mult);
                                 }
                             }
                         }
@@ -130,15 +161,22 @@ public class ItemManager : MonoBehaviour
                                 if (pocket.Suit.Equals("Clubs"))
                                 {
                                     pocket.ModifyMult(item.ValueOfStats[0], true);
+                                    mult = pocket.GetPocketValue();
+                                    SuitsMults.ModifyText("Clubs", mult);
                                 }
                                 else if (pocket.Suit.Equals("Spades"))
                                 {
                                     pocket.ModifyMult(item.ValueOfStats[0], false);
+                                    mult = pocket.GetPocketValue();
+                                    SuitsMults.ModifyText("Spades", mult);
                                 }
                             }
                             else
                             {
                                 pocket.ModifyMult(item.ValueOfStats[1], false);
+                                mult = pocket.GetPocketValue();
+                                SuitsMults.ModifyText("Hearth", mult);
+                                SuitsMults.ModifyText("Diamond", mult);
                             }
                         }
                         break;
