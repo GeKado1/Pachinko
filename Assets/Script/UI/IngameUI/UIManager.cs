@@ -20,7 +20,7 @@ public class UIManager : MonoBehaviour
 
         QuoteText.text = "Points required: " + QuoteManager.GetPointsRequired();
 
-        BallsText.text = "Balls Remaining: " + BallManager.GetBalls();
+        BallsText.text = BallManager.GetBalls().ToString();
         BallOut = false;
     }
 
@@ -34,7 +34,7 @@ public class UIManager : MonoBehaviour
 
         if (BallOut || NextRoundUpdate)
         {
-            BallsText.text = "Balls Remaining: " + BallManager.GetBalls();
+            BallsText.text = BallManager.GetBalls().ToString();
             NextRoundUpdate = false;
         }
     }
