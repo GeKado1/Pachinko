@@ -43,6 +43,15 @@ public class BallLauncher : MonoBehaviour
         }
     }
 
+    public void BottonLaunchBall()
+    {
+        if (Time.time >= nextSpawnTime)
+        {
+            LaunchBall();
+            nextSpawnTime = Time.time + cooldownTime;
+        }
+    }
+
     public void SetMultiplier(int multiplierValue)
     {
         currentMultiplier = multiplierValue;
