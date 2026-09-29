@@ -9,8 +9,7 @@ public class BallLauncher : MonoBehaviour
     [SerializeField] private BallAmmoManager ammoManager;
     [SerializeField] private Transform spawnPoint; 
 
-    [Header("Configuración de Tecla y Fuerza")]
-    [SerializeField] private KeyCode launchKey = KeyCode.Space;
+    [Header("Configuración de Fuerza")]
     [SerializeField] private Vector2 launchForce = new Vector2(0f, -2f); // Fuerza inicial (ej: impulso hacia abajo o diagonal)
 
     [Header("Variación Aleatoria (Jitter)")]
@@ -25,27 +24,12 @@ public class BallLauncher : MonoBehaviour
 
     [Header("Control de Cadencia (Cooldown)")]
     [SerializeField] private float cooldownTime = 0.1f; 
-    [SerializeField] private bool allowContinuousAutoFire = false; // ¿Permitir mantener pulsado?
 
     [Header("Animaciones Boton")]
     [SerializeField] private Animation buttonAnimation;
 
-
     private int currentMultiplier = 1;
     private float nextSpawnTime;
-
-    private void Update()
-    {
-        bool isKeyPressed = allowContinuousAutoFire
-            ? Input.GetKey(launchKey)
-            : Input.GetKeyDown(launchKey);
-
-        if (isKeyPressed && Time.time >= nextSpawnTime)
-        {
-            LaunchBall();
-            nextSpawnTime = Time.time + cooldownTime;
-        }
-    }
 
     public void BottonLaunchBall()
     {
