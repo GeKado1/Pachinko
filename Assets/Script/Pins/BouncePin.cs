@@ -16,6 +16,7 @@ public class BouncePin : MonoBehaviour
         if (collision.gameObject.CompareTag("Ball"))
         {
             ApplyForce(collision);
+            Animation.Rewind();
             Animation.Play();
         }
     }
