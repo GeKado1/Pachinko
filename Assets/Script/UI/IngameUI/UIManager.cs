@@ -18,7 +18,7 @@ public class UIManager : MonoBehaviour
         PointsText.text = PuntuactionManager.GetPunctuaction() + " x";
         PointsChanged = false;
 
-        QuoteText.text = "Points required: " + QuoteManager.GetPointsRequired();
+        QuoteText.text = "Next Payment " + QuoteManager.GetPointsRequired();
 
         BallsText.text = BallManager.GetBalls().ToString();
         BallOut = false;
