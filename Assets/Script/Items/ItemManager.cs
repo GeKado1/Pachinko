@@ -1,11 +1,12 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ItemManager : MonoBehaviour
 {
     public List<Item> AllItems = new List<Item>();
-    public List<Item> ActiveItems = new List<Item>();
+    public List<Item> PurchasedItems = new List<Item>();
 
     public static ItemManager Instance { get; private set; }
 
@@ -60,7 +61,7 @@ public class ItemManager : MonoBehaviour
 
     private void ModifyPockets()
     {
-        foreach (Item item in ActiveItems)
+        foreach (Item item in PurchasedItems)
         {
             if (item.ItemTag.Equals("PocketPasive"))
             {
@@ -158,7 +159,7 @@ public class ItemManager : MonoBehaviour
 
     private void UpgradeBouncePins()
     {
-        foreach(Item item in ActiveItems)
+        foreach(Item item in PurchasedItems)
         {
             if (item.ItemTag.Equals("Bouncer"))
             {
@@ -179,15 +180,15 @@ public class ItemManager : MonoBehaviour
 
     public List<Item> GetPinItems()
     {
-        List<Item> list = new List<Item>();
+        return PurchasedItems.Where(item => item.ItemTag == "Pin").ToList();
+    }
 
-        foreach (Item item in ActiveItems) {
-            if (item.ItemTag.Equals("Pin"))
-            {
-                list.Add(item);
-            }
-        }
+    public void ConsumePinItem(string pinName)
+    {
+        Item itemToRemove = PurchasedItems.FirstOrDefault(item => item.ItemName == pinName && item.ItemTag == "Pin");
 
-        return list;
+        if (itemToRemove != null) {
+            PurchasedItems.Remove(itemToRemove);
+        }   
     }
 }

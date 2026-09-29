@@ -50,7 +50,7 @@ public class SellingItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         if (PlayerPocket.Points >= Item.ItemPrice)
         {
-            ItemManager.ActiveItems.Add(Item);
+            ItemManager.PurchasedItems.Add(Item);
             BuyButton.interactable = false;
             BuyButton.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "SOLD";
             PlayerPocket.Points -= (int)Item.ItemPrice;

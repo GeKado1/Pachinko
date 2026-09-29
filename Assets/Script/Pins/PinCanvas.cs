@@ -21,9 +21,15 @@ public class PinCanvas : MonoBehaviour
 
                     Pin.SelectedPin.OnPinChange(pinType);
 
-                    itemsType.RemoveAt(0);
+                    if (PlayerSceneSetup.instance.ItemManagerRef != null)
+                    {
+                        PlayerSceneSetup.instance.ItemManagerRef.ConsumePinItem(pinType);
+                    }
 
-                    PlayerSceneSetup.PinsToSetup = false;
+                    itemsType.RemoveAt(0);
+                    PlayerSceneSetup.instance.ItemsType.Remove(firstItem);
+
+                    PlayerSceneSetup.PinsToSetup--;
                 }
             }
             else

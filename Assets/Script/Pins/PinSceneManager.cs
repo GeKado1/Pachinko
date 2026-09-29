@@ -54,7 +54,18 @@ public class PinSceneManager : MonoBehaviour
 
     public static void AddToPinList(GameObject pinToAdd, string pinType)
     {
-        SavedPins.Add(new PinData(pinToAdd.transform.position, pinType));
+        Vector3 pos = pinToAdd.transform.position;
+
+        int existingIndex = SavedPins.FindIndex(p => Vector3.Distance(p.Position, pos) < 0.1f);
+
+        if (existingIndex != -1)
+        {
+            SavedPins[existingIndex] = new PinData(pos, pinType);
+        }
+        else
+        {
+             SavedPins.Add(new PinData(pos, pinType));
+        }
     }
 
     private void SetPins()
@@ -101,5 +112,10 @@ public class PinSceneManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public static void ClearSavedPins()
+    {
+        SavedPins.Clear();
     }
 }

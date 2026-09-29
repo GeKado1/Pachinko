@@ -23,7 +23,7 @@ public class Pin : MonoBehaviour
 
     void Update()
     {
-        if (PlayerSceneSetup.PinsToSetup)
+        if (PlayerSceneSetup.PinsToSetup > 0)
         {
             PinCanvas.SetActive(true);
         }
