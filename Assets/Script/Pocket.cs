@@ -28,6 +28,7 @@ public class Pocket : MonoBehaviour {
             int value = Mathf.RoundToInt(PocketValue * PointsMultiplier * ballValue);
 
             PuntuactionManager.UpdatePuntuaction(value);
+            AudioManager.Instance.PlaySFX(SFX.BallFalled);
         }
     }
 

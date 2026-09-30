@@ -46,6 +46,8 @@ public class AudioManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
+        musicSource.loop = true;
+        sfxSource.loop = false;
         PlayMusic(MusicTrack.Game);
     }
 

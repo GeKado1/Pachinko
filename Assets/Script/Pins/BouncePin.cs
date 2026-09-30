@@ -18,6 +18,7 @@ public class BouncePin : MonoBehaviour
             ApplyForce(collision);
             Animation.Rewind();
             Animation.Play();
+            AudioManager.Instance.PlaySFX(SFX.BallBounce);
         }
     }
 

@@ -10,6 +10,11 @@ public class BouncePinController : MonoBehaviour
         GoldBouncePin.SetActive(false);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        AudioManager.Instance.PlaySFX(SFX.BallBounce);
+    }
+
 #if UNITY_EDITOR
     void Update()
     {
@@ -17,6 +22,7 @@ public class BouncePinController : MonoBehaviour
             HaveGoldUpgrade();
         }
     }
+
 #endif
 
     public void HaveGoldUpgrade()

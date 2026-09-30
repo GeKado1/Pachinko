@@ -120,6 +120,7 @@ public class BallLauncher : MonoBehaviour
         CameraShake.Instance.Shake(0.2f, 0.1f);
         //buttonAnimation.Rewind();
         buttonAnimation.Play();
+        AudioManager.Instance.PlaySFX(SFX.BallLaunch);
 
     }
 }
