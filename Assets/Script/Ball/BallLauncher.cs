@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class BallLauncher : MonoBehaviour
@@ -29,8 +30,9 @@ public class BallLauncher : MonoBehaviour
     [Header("Animaciones Boton")]
     [SerializeField] private Animation buttonAnimation;
 
-    [Header("Sprites Boton")]
+    [Header("Boton Lanzar Pelotas")]
     [SerializeField] private List<Sprite> buttons = new List<Sprite>();
+    private Coroutine launchCoroutine;
 
     [Header("Valor Boton Multiplier")]
     [SerializeField] private List<int> buttonMultiplierValue = new List<int>();
@@ -41,14 +43,15 @@ public class BallLauncher : MonoBehaviour
 
     public void BottonLaunchBall()
     {
-        if (Time.time >= nextSpawnTime)
+        if (Time.time >= nextSpawnTime && ammoManager.CurrentAmmo > 0 && BallManager.GetBalls() > 0)
         {
             LaunchBall();
             nextSpawnTime = Time.time + cooldownTime;
-            buttonAnimation.Rewind();
+            //buttonAnimation.Rewind();
             buttonAnimation.Play();
         }
     }
+
 
     public void SetMultiplier(Image spriteButton)
     {
