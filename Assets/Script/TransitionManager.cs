@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TransitionManager : MonoBehaviour
 {
@@ -21,6 +22,12 @@ public class TransitionManager : MonoBehaviour
     [SerializeField] private Transform shopCameraTarget;
     [SerializeField] private float cameraMoveDuration = 0.5f;
 
+    [Header("Configuración de Game Over")]
+    [Tooltip("El nombre exacto de la escena de Game Over en Build Settings")]
+    [SerializeField] private string gameOverSceneName = "GameOver";
+    [SerializeField] private CanvasGroup fadeCanvasGroup;
+    [SerializeField] private float fadeDuration = 0.2f;
+
     private void Start()
     {
         // Colocar la cámara en la posición inicial del juego al arrancar
@@ -29,6 +36,30 @@ public class TransitionManager : MonoBehaviour
             cameraTransform.position = gameCameraTarget.position;
             cameraTransform.rotation = gameCameraTarget.rotation;
         }
+    }
+
+    public void TriggerGameOver()
+    {
+        StartCoroutine(GameOverRoutine());
+    }
+
+    private IEnumerator GameOverRoutine()
+    {
+        // 1. Bloqueamos interacción
+        fadeCanvasGroup.blocksRaycasts = true;
+
+        // 2. Fade Out a negro
+        float timer = 0f;
+        while (timer < fadeDuration)
+        {
+            timer += Time.deltaTime;
+            fadeCanvasGroup.alpha = Mathf.Lerp(0f, 1f, timer / fadeDuration);
+            yield return null;
+        }
+        fadeCanvasGroup.alpha = 1f;
+
+        // 3. Cargar la escena de Game Over
+        SceneManager.LoadScene(gameOverSceneName);
     }
 
     public void TriggerTransitionToShop()
@@ -89,7 +120,7 @@ public class TransitionManager : MonoBehaviour
     public void StartNextRound()
     {
         if (ammoManager != null)
-            ammoManager.ResetAmmo(ammoPerRound);
+            ammoManager.ResetAmmo();
 
         TriggerTransitionToGame();
     }

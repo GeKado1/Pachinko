@@ -163,3 +163,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballValue: 1
   ballMultiplier: 1
+  ballSprite:
+  - {fileID: 21300000, guid: a585cf940f67d7b4e83ddd69df2f9987, type: 3}
+  - {fileID: 21300000, guid: 24480514e4796ca49960e800c59c9854, type: 3}
+  - {fileID: 21300000, guid: 8ba167b507366df4ba43893a29a50f43, type: 3}
+  - {fileID: 21300000, guid: e3de6341231d46745bc94d30802f48c0, type: 3}
