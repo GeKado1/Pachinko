@@ -948,6 +948,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shop
       objectReference: {fileID: 0}
+    - target: {fileID: 4850878881453575871, guid: 71b3b803cd513dc479f16809b751e76a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6048669204816417731, guid: 71b3b803cd513dc479f16809b751e76a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2360,6 +2364,10 @@ PrefabInstance:
     - target: {fileID: 5432150409422801062, guid: 98f4470581d3ce74d9415477676a3afb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556757586941133000, guid: 98f4470581d3ce74d9415477676a3afb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5726206305701662006, guid: 98f4470581d3ce74d9415477676a3afb, type: 3}
       propertyPath: m_AnchorMax.y
