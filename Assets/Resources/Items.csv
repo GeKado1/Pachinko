@@ -1,14 +1,14 @@
-KEY,ITEM_NAME,ITEM_TAG,ITEM_DESCRIPTION,ITEM_PRICE,NUMBER_STATS_INVOLVED,ITEM_STATS_VALUE
-1,AttractorPin,Pin,Draws the balls slightly toward its position within a small radius.,5,1
-2,RejectorPin,Pin,Rejects the balls slightly from their position within a small radius.,5,12
-3,BuffPin,Pin,When a ball collides with it adds a 0.25% of the base multiplier is added to the ball. It activates only once per ball.,10,1,0.25
-4,NerfPin,Pin,When a ball collides with it a 0.25% of the base multiplier is subtracted from the ball. It activates only once per ball.,0,1,0.25
-"5,DivisorPin,Pin,Divide the ball into x parts where x is the value of the larger ball (x1: it becomes smaller; x2: the ball splits into two small balls of value 1; x5: the ball splits into five small balls of value 1; x10: the ball splits into ten small balls of value 1).,10,1,1"
-6,GoldenBouncer,Bouncer,It gives you one ball each time a ball bounces off it.,20,1,1
-7,StarAce,PocketPasive,Increases the multiplier of all pockets by 2.,20,1,2
-8,HeartAce,PocketPasive,Increases the multiplier for heart pockets by 0'5.,10,1,0.5
-9,DiamondAce,PocketPasive,Increases the multiplier for diamond pockets by 0'5.,1,1,0.5
-10,ClubsAce,PocketPasive,Increases the multiplier for clubs pockets by 0'5.,10,1,0.5
-11,SpadesAce,PocketPasive,Increases the multiplier for spades pockets by 0'5.,10,1,0.5
-12,RedPokerSuit,PocketPasive,Doubles the multiplier for red suit pockets and reduces the multiplier for clovers threefold. For spades it increases the multiplier fourfold.,15,3,2-3-4
-13,BlackPokerSuit,PocketPasive,Double the multiplier for Clubs while halving the multiplier for Spades and dividing the multiplier for red suits pockets by three,15,2,2-3
+KEY,ITEM_NAME,ITEM_TAG,ITEM_DESCRIPTION,ITEM_PRICE,NUMBER_STATS_INVOLVED,ITEM_STATS_VALUE,ITEM_SPRITE
+1,AttractorPin,Pin,Draws the balls slightly toward its position within a small radius.,5,1,0,Items_Sprites/pachinko_pin_atractor
+2,RejectorPin,Pin,Rejects the balls slightly from their position within a small radius.,5,12,0,Items_Sprites/pachinko_pin_repulsor
+3,BuffPin,Pin,When a ball collides with it adds a 0.25% of the base multiplier is added to the ball. It activates only once per ball.,10,1,0.25,Items_Sprites/pachinko_pin_buff
+4,NerfPin,Pin,When a ball collides with it a 0.25% of the base multiplier is subtracted from the ball. It activates only once per ball.,0,1,0.25,Items_Sprites/pachinko_pin_nerf
+"5,DivisorPin,Pin,Divide the ball into x parts where x is the value of the larger ball (x1: it becomes smaller; x2: the ball splits into two small balls of value 1; x5: the ball splits into five small balls of value 1; x10: the ball splits into ten small balls of value 1).,10,1,1,Items_Sprites/Carta_Corazon_Item"
+6,GoldenBouncer,Bouncer,It gives you one ball each time a ball bounces off it.,20,1,1,Items_Sprites/pachinko_bouncer_gold
+7,StarAce,PocketPasive,Increases the multiplier of all pockets by 2.,20,1,2,Items_Sprites/Carta_Corazon_Item
+8,HeartAce,PocketPasive,Increases the multiplier for heart pockets by 0'5.,10,1,0.5,Items_Sprites/Carta_Corazon_Item
+9,DiamondAce,PocketPasive,Increases the multiplier for diamond pockets by 0'5.,1,1,0.5,Items_Sprites/Carta_Rombo_Item
+10,ClubsAce,PocketPasive,Increases the multiplier for clubs pockets by 0'5.,10,1,0.5,Items_Sprites/Carta_Trebol_Item
+11,SpadesAce,PocketPasive,Increases the multiplier for spades pockets by 0'5.,10,1,0.5,Items_Sprites/Carta_Pica_Item
+12,RedPokerSuit,PocketPasive,Doubles the multiplier for red suit pockets and reduces the multiplier for clovers threefold. For spades it increases the multiplier fourfold.,15,3,2-3-4,Items_Sprites/Carta_Corazon_Item
+13,BlackPokerSuit,PocketPasive,Double the multiplier for Clubs while halving the multiplier for Spades and dividing the multiplier for red suits pockets by three,15,2,2-3,Items_Sprites/Carta_Corazon_Item
