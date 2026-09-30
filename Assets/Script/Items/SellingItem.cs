@@ -61,14 +61,12 @@ public class SellingItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnSell()
     {
-        Debug.Log("On sell");
         if (PuntuactionManager.GetPunctuaction() >= Item.ItemPrice)
         {
             ItemManager.PurchasedItems.Add(Item);
             BuyButton.interactable = false;
             PriceText.text = " SOLD";
             PuntuactionManager.UpdatePuntuaction(-(int)Item.ItemPrice);
-            //PlayerPocket.Points -= (int)Item.ItemPrice;
             BallSprite.SetActive(false);
         }
         else
