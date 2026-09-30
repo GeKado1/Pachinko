@@ -2450,6 +2450,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2657222455840681982, guid: 98f4470581d3ce74d9415477676a3afb, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3550986423594658835, guid: 98f4470581d3ce74d9415477676a3afb, type: 3}
       propertyPath: m_Name
       value: UI_Canvas
@@ -2614,6 +2618,10 @@ PrefabInstance:
       propertyPath: PointsText
       value: 
       objectReference: {fileID: 1296023720}
+    - target: {fileID: 7555551886017206354, guid: 98f4470581d3ce74d9415477676a3afb, type: 3}
+      propertyPath: PointsTextShop
+      value: 
+      objectReference: {fileID: 1746003606}
     - target: {fileID: 8428883794375978051, guid: 98f4470581d3ce74d9415477676a3afb, type: 3}
       propertyPath: ammoManager
       value: 
@@ -10417,6 +10425,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 837068353362445501, guid: 2bc3cf9b0a8172e49943588fa730706d, type: 3}
   m_PrefabInstance: {fileID: 741593745}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1746003606 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4011963186464180888, guid: 1686ae6b9aee1da4285dc917f886b22f, type: 3}
+  m_PrefabInstance: {fileID: 1799095021}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1749751674
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10770,9 +10789,25 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4011963186464180888, guid: 1686ae6b9aee1da4285dc917f886b22f, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5285774175260879890, guid: 1686ae6b9aee1da4285dc917f886b22f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 106.4
+      objectReference: {fileID: 0}
     - target: {fileID: 5696636907757062467, guid: 1686ae6b9aee1da4285dc917f886b22f, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272175788039868859, guid: 1686ae6b9aee1da4285dc917f886b22f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618583358547230055, guid: 1686ae6b9aee1da4285dc917f886b22f, type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 31
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

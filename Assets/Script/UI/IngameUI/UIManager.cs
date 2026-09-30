@@ -4,6 +4,7 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI PointsText;
+    [SerializeField] private TextMeshProUGUI PointsTextShop;
     public static bool PointsChanged;
 
     [SerializeField] private TextMeshProUGUI BallsText;
@@ -16,6 +17,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         PointsText.text = PuntuactionManager.GetPunctuaction() + " x";
+        PointsTextShop.text = PuntuactionManager.GetPunctuaction() + " x";
         PointsChanged = false;
 
         QuoteText.text = "Next Payment " + QuoteManager.GetPointsRequired();
@@ -29,6 +31,7 @@ public class UIManager : MonoBehaviour
         if (PointsChanged)
         {
             PointsText.text = PuntuactionManager.GetPunctuaction() + " x";
+            PointsTextShop.text = PuntuactionManager.GetPunctuaction() + " x";
             PointsChanged = false;
         }
 
