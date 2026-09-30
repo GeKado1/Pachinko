@@ -29,12 +29,16 @@ public class ItemManager : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        SearchPockets();
+    }
+
     public void OnTransition()
     {
-        //SearchPockets();
+        Debug.Log("OnTranistion item");
         ModifyPockets();
 
-        //SearchBouncePins();
         UpgradeBouncePins();
 
         foreach (SellingItem item in ShopItems)
@@ -64,6 +68,7 @@ public class ItemManager : MonoBehaviour
             if (item.ItemTag.Equals("PocketPasive"))
             {
                 float mult = 0f;
+
                 //Sorry por el switch, se tendria que modificar o hacer otro csv para los pocket items para evitarlo (y no nos vamos engañar, es trabajo extra y me da flojera y la jam es este miercoles, no da tiempo)
                 switch (item.ItemName)
                 {
@@ -78,7 +83,7 @@ public class ItemManager : MonoBehaviour
                                 mult = pocket.GetPocketValue();
                             }
                         }
-
+                        Debug.Log(mult);
                         SuitsMults.ModifyText("Heart", mult);
                         break;
                     case "DiamondAce":
@@ -92,7 +97,7 @@ public class ItemManager : MonoBehaviour
                                 mult = pocket.GetPocketValue();
                             }
                         }
-
+                        Debug.Log(mult);
                         SuitsMults.ModifyText("Diamond", mult);
                         break;
                     case "ClubsAce":
@@ -106,7 +111,7 @@ public class ItemManager : MonoBehaviour
                                 mult = pocket.GetPocketValue();
                             }
                         }
-
+                        Debug.Log(mult);
                         SuitsMults.ModifyText("Clubs", mult);
                         break;
                     case "SpadesAce":
@@ -120,13 +125,14 @@ public class ItemManager : MonoBehaviour
                                 mult = pocket.GetPocketValue();
                             }
                         }
-
+                        Debug.Log(mult);
                         SuitsMults.ModifyText("Spades", mult);
                         break;
                     case "RedPocketSuit":
                         foreach (Pocket pocket in PocketList)
                         {
                             mult = 0f;
+
                             if (pocket.Color.Equals("Red")) {
                                 pocket.ModifyMult(item.ValueOfStats[0], true);
                                 mult = pocket.GetPocketValue();
@@ -152,6 +158,8 @@ public class ItemManager : MonoBehaviour
                     case "BlackPocketSuit":
                         foreach (Pocket pocket in PocketList)
                         {
+                            mult = 0f;
+
                             if (pocket.Color.Equals("Black"))
                             {
                                 if (pocket.Suit.Equals("Clubs"))

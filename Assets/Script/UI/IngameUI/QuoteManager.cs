@@ -18,7 +18,7 @@ public class QuoteManager : MonoBehaviour
     public int paiedQuotes = 0;
     public int quotesTotalsForWin = 3;
 
-    void Start()
+    void Awake()
     {
         PointsRequired = Quote;
     }
