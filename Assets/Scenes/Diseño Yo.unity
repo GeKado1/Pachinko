@@ -696,7 +696,7 @@ PrefabInstance:
       objectReference: {fileID: 292143510}
     - target: {fileID: 7286571648809565309, guid: 2bc3cf9b0a8172e49943588fa730706d, type: 3}
       propertyPath: PointsMultiplier
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7492515875423288045, guid: 2bc3cf9b0a8172e49943588fa730706d, type: 3}
       propertyPath: m_text
@@ -2010,7 +2010,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6239096788239116100, guid: f56116484ab9f8e4bac0bdcdbd526c7d, type: 3}
       propertyPath: initialAmmo
-      value: 43
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6239096788239116100, guid: f56116484ab9f8e4bac0bdcdbd526c7d, type: 3}
       propertyPath: poolManager
@@ -4037,7 +4037,7 @@ PrefabInstance:
       objectReference: {fileID: 292143510}
     - target: {fileID: 7286571648809565309, guid: 2bc3cf9b0a8172e49943588fa730706d, type: 3}
       propertyPath: PointsMultiplier
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7492515875423288045, guid: 2bc3cf9b0a8172e49943588fa730706d, type: 3}
       propertyPath: m_text
@@ -4809,7 +4809,7 @@ PrefabInstance:
       objectReference: {fileID: 292143510}
     - target: {fileID: 7286571648809565309, guid: 2bc3cf9b0a8172e49943588fa730706d, type: 3}
       propertyPath: PointsMultiplier
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7492515875423288045, guid: 2bc3cf9b0a8172e49943588fa730706d, type: 3}
       propertyPath: m_text
@@ -5062,7 +5062,7 @@ PrefabInstance:
       objectReference: {fileID: 292143510}
     - target: {fileID: 7286571648809565309, guid: 2bc3cf9b0a8172e49943588fa730706d, type: 3}
       propertyPath: PointsMultiplier
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7492515875423288045, guid: 2bc3cf9b0a8172e49943588fa730706d, type: 3}
       propertyPath: m_text
@@ -5162,7 +5162,7 @@ PrefabInstance:
       objectReference: {fileID: 292143510}
     - target: {fileID: 7286571648809565309, guid: 2bc3cf9b0a8172e49943588fa730706d, type: 3}
       propertyPath: PointsMultiplier
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7492515875423288045, guid: 2bc3cf9b0a8172e49943588fa730706d, type: 3}
       propertyPath: m_text
@@ -6241,7 +6241,7 @@ PrefabInstance:
       objectReference: {fileID: 292143510}
     - target: {fileID: 7286571648809565309, guid: 2bc3cf9b0a8172e49943588fa730706d, type: 3}
       propertyPath: PointsMultiplier
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7492515875423288045, guid: 2bc3cf9b0a8172e49943588fa730706d, type: 3}
       propertyPath: m_text
@@ -7320,7 +7320,7 @@ PrefabInstance:
       objectReference: {fileID: 292143510}
     - target: {fileID: 7286571648809565309, guid: 2bc3cf9b0a8172e49943588fa730706d, type: 3}
       propertyPath: PointsMultiplier
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7492515875423288045, guid: 2bc3cf9b0a8172e49943588fa730706d, type: 3}
       propertyPath: m_text
@@ -8680,7 +8680,7 @@ PrefabInstance:
       objectReference: {fileID: 292143510}
     - target: {fileID: 7286571648809565309, guid: 2bc3cf9b0a8172e49943588fa730706d, type: 3}
       propertyPath: PointsMultiplier
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7492515875423288045, guid: 2bc3cf9b0a8172e49943588fa730706d, type: 3}
       propertyPath: m_text
@@ -12643,7 +12643,7 @@ PrefabInstance:
       objectReference: {fileID: 416080868}
     - target: {fileID: 4750653233570951865, guid: 4e3dcb4eae6670b4c8a7e3339460a4a4, type: 3}
       propertyPath: defaultCapacity
-      value: 43
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4750653233570951865, guid: 4e3dcb4eae6670b4c8a7e3339460a4a4, type: 3}
       propertyPath: maxActiveBallsInScreen

@@ -68,6 +68,12 @@ public class BallAmmoManager : MonoBehaviour
         {
             if (PuntuactionManager.GetPunctuaction() > 0)
             {
+                if(quoteManager.GetActualRound() == quoteManager.GetMaxRounds() && quoteManager.GetQuote() > PuntuactionManager.GetPunctuaction())
+                {
+                    transitionManager.TriggerGameOver();
+                    yield break;
+                }
+
                 if (transitionManager != null)
                     transitionManager.TriggerTransitionToShop();
             }

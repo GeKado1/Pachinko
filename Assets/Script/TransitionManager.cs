@@ -14,7 +14,6 @@ public class TransitionManager : MonoBehaviour
 
     [Header("Referencias de Juego")]
     [SerializeField] private BallAmmoManager ammoManager;
-    [SerializeField] private int ammoPerRound = 20;
 
     [Header("Configuración de Cámara")]
     [SerializeField] private Transform cameraTransform;
