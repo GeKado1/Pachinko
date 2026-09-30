@@ -25,7 +25,7 @@ public class SellingItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         {
             Item = ItemManager.GetItem();
 
-            if (PlayerPocket.Points < Item.ItemPrice)
+            if (PuntuactionManager.GetPunctuaction() < Item.ItemPrice)
             {
                 PriceText.color = Color.red;
                 BuyButton.interactable = false;
@@ -61,12 +61,12 @@ public class SellingItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnSell()
     {
-        if (PlayerPocket.Points >= Item.ItemPrice)
+        if (PuntuactionManager.GetPunctuaction() >= Item.ItemPrice)
         {
             ItemManager.PurchasedItems.Add(Item);
             BuyButton.interactable = false;
-            PriceText.text = "SOLD";
-            PlayerPocket.Points -= (int)Item.ItemPrice;
+            PriceText.text = " SOLD";
+            PuntuactionManager.UpdatePuntuaction(-(int)Item.ItemPrice);
             BallSprite.SetActive(false);
         }
         else
