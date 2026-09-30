@@ -43,12 +43,10 @@ public class BallLauncher : MonoBehaviour
 
     public void BottonLaunchBall()
     {
-        if (Time.time >= nextSpawnTime && ammoManager.CurrentAmmo > 0 && BallManager.GetBalls() > 0)
+        if (Time.time >= nextSpawnTime)
         {
             LaunchBall();
             nextSpawnTime = Time.time + cooldownTime;
-            //buttonAnimation.Rewind();
-            buttonAnimation.Play();
         }
     }
 
@@ -118,6 +116,10 @@ public class BallLauncher : MonoBehaviour
 
             PuntuactionManager.UpdatePuntuaction(currentMultiplier);
         }
+
+        CameraShake.Instance.Shake(0.2f, 0.1f);
+        //buttonAnimation.Rewind();
+        buttonAnimation.Play();
 
     }
 }
