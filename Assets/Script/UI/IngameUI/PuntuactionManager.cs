@@ -26,4 +26,10 @@ public class PuntuactionManager : MonoBehaviour
     {
         return Punctuaction;
     }
+
+    public void SetIncreasePuntuationShop()
+    {
+        Punctuaction += PUNTUATION;
+        UIManager.PointsChanged = true;
+    }
 }

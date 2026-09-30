@@ -108,7 +108,6 @@ public class BallLauncher : MonoBehaviour
 
             BallManager.UpdateBalls(1, false);
             ballComponent.SetSpriteBall(numOfMultiplierValue);
-            // Cambiar el color o tamaño de la bola según su valor para feedback visual
         }
         else if (spawnedBall == null)
         {

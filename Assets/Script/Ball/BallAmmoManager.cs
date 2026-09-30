@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Transactions;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class BallAmmoManager : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class BallAmmoManager : MonoBehaviour
 
     [Header("Referencias de Transición")]
     [SerializeField] private TransitionManager transitionManager;
+
+    [Header("Referencias de Quota")]
+    [SerializeField] private QuoteManager quoteManager;
 
     public int CurrentAmmo { get; private set; }
 
@@ -64,27 +68,29 @@ public class BallAmmoManager : MonoBehaviour
         {
             if (PuntuactionManager.GetPunctuaction() > 0)
             {
-                Debug.Log("Ronda terminada. Tienes puntos suficientes.");
-
                 if (transitionManager != null)
                     transitionManager.TriggerTransitionToShop();
             }
             else
             {
-                Debug.Log("¡GAME OVER! Te has quedado sin bolas y tus puntos han llegado a 0.");
+                transitionManager.TriggerGameOver();
+                yield break;
+            }
 
-                // Aquí activas tu panel de Game Over o reinicias la escena
-                // GameOverPanel.SetActive(true);
+            if (quoteManager.GetActualRound() >= quoteManager.GetMaxRounds() && PuntuactionManager.GetPunctuaction() < quoteManager.GetQuote())
+            {
+                transitionManager.TriggerGameOver();
+                yield break;
             }
         }
 
-        if(poolManager.GetCountActiveBalls() == 0 && PuntuactionManager.GetPunctuaction() == 0)
-            Debug.Log("¡GAME OVER! Te has quedado sin bolas y tus puntos han llegado a 0.");
+        if(poolManager != null && poolManager.GetCountActiveBalls() == 0 && PuntuactionManager.GetPunctuaction() == 0)
+            transitionManager.TriggerGameOver();
     }
 
-    public void ResetAmmo(int amount)
+    public void ResetAmmo()
     {
-        CurrentAmmo = amount;
+        CurrentAmmo = BallPoolManager.GetDefaultCapacity();
         OnAmmoChanged?.Invoke(CurrentAmmo); // Notifica a la UI para que actualice el texto de bolas
     }
 }

@@ -14,13 +14,19 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/Dise\xF1o.unity"
     guid: 5f0ebd5273b447f46bc45f03c9745ae7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prueba_Esp.unity
     guid: 4e1f860dbca2d2b4cb9a0058b8336e99
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prueba_Naz.unity
     guid: cc102f70e4bee1c4c818a31d7cd79106
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Shop.unity
     guid: a7e1a5e38f1c66e4d9d06d5f72455a92
+  - enabled: 1
+    path: "Assets/Scenes/Dise\xF1o Yo.unity"
+    guid: c997db81413f28049bb8d28a7c4093b2
+  - enabled: 1
+    path: Assets/Scenes/GameOverScreen.unity
+    guid: 1366c11d509486a448ba9ee437fb685e
   m_configObjects: {}
