@@ -30,7 +30,7 @@ public class SellingItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             }
             else
             {
-                PriceText.color = Color.black;
+                PriceText.color = Color.white;
             }
 
             PriceText.text = Item.ItemPrice.ToString() + " X ";
