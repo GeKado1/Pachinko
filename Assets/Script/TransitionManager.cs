@@ -23,9 +23,6 @@ public class TransitionManager : MonoBehaviour
 
     private void Start()
     {
-        gameContainer.SetActive(true);
-        shopContainer.SetActive(false);
-
         // Colocar la cámara en la posición inicial del juego al arrancar
         if (cameraTransform != null && gameCameraTarget != null)
         {
@@ -48,10 +45,6 @@ public class TransitionManager : MonoBehaviour
 
     private IEnumerator TransitionRoutine(GameObject fromContainer, GameObject toContainer, Transform targetCameraTransform)
     {
-        // Cambiar los contenedores de UI al iniciar el movimiento
-        fromContainer.SetActive(false);
-        toContainer.SetActive(true);
-
         if (fromContainer == shopContainer)
         {
             BallManager.ResetBallsRemaining();
