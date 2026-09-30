@@ -9,13 +9,15 @@ public class PachinkoBall : MonoBehaviour
     [SerializeField] private float ballMultiplier = 1f;
 
     [SerializeField] private List<Sprite> ballSprite = new List<Sprite>();
+    private SpriteRenderer spriteRenderer;
+
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = ballSprite[0];
+    }
 
     public int Multiplier { get; set; } = 1;
-
-    private void Start()
-    {
-        GetComponent<SpriteRenderer>().sprite = ballSprite[0];
-    }
 
     public void SetPool(IObjectPool<GameObject> pool)
     {
@@ -31,7 +33,7 @@ public class PachinkoBall : MonoBehaviour
 
         // RESETEAR ESCALA
         transform.localScale = Vector3.one;
-        GetComponent<SpriteRenderer>().sprite = ballSprite[0];
+        spriteRenderer.sprite = ballSprite[0];
 
         if (ballPool != null)
             ballPool.Release(gameObject);
@@ -41,7 +43,7 @@ public class PachinkoBall : MonoBehaviour
 
     public void SetSpriteBall(int amount)
     {
-        GetComponent<SpriteRenderer>().sprite = ballSprite[amount];
+        spriteRenderer.sprite = ballSprite[amount];
     }
 
     public void ModifyMultiplier(float modifierMult)
