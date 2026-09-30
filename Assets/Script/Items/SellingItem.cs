@@ -15,6 +15,8 @@ public class SellingItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     [SerializeField] private Button BuyButton;
 
+    [SerializeField] private Image Sprite;
+
     void Start()
     {
         ItemManager = GameObject.FindGameObjectWithTag("ItemManager").GetComponent<ItemManager>();
@@ -30,7 +32,7 @@ public class SellingItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             }
             else
             {
-                PriceText.color = Color.black;
+                PriceText.color = Color.white;
             }
 
             PriceText.text = Item.ItemPrice.ToString() + " X ";
@@ -44,6 +46,16 @@ public class SellingItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         {
             ItemDescription.GetComponent<TextMeshProUGUI>().text = Item.ItemDescription;
             ItemDescription.SetActive(false);
+        }
+
+        Sprite nuevoSprite = Resources.Load<Sprite>(Item.ItemSpriteSource);
+        if (nuevoSprite != null)
+        {
+            Sprite.sprite = nuevoSprite;
+        }
+        else
+        {
+            Debug.LogWarning("No se encontró el sprite en la ruta especificada.");
         }
     }
 

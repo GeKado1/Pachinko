@@ -297,9 +297,12 @@ MonoBehaviour:
     ItemPrice: 0
     ItemStatsInvolved: 0
     ValueOfStats: []
+    ItemSpriteSource: 
   ItemDescription: {fileID: 2181111468586329791}
   PriceText: {fileID: 6466179181000933739}
+  BallSprite: {fileID: 0}
   BuyButton: {fileID: 8816985092045516345}
+  Sprite: {fileID: 667558446454679017}
 --- !u!1 &2877877150525934609
 GameObject:
   m_ObjectHideFlags: 0
