@@ -15,25 +15,27 @@ public class TransitionManager : MonoBehaviour
     [Header("Referencias de Juego")]
     [SerializeField] private BallAmmoManager ammoManager;
 
-    [Header("Configuración de Cámara")]
+    [Header("Configuraciï¿½n de Cï¿½mara")]
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private Transform gameCameraTarget;
     [SerializeField] private Transform shopCameraTarget;
     [SerializeField] private float cameraMoveDuration = 0.5f;
 
-    [Header("Configuración de Game Over")]
+    [Header("Configuraciï¿½n de Game Over")]
     [Tooltip("El nombre exacto de la escena de Game Over en Build Settings")]
     [SerializeField] private string gameOverSceneName = "GameOver";
     [SerializeField] private CanvasGroup fadeCanvasGroup;
     [SerializeField] private float fadeDuration = 0.2f;
 
-    [Header("Configuración de Win Sceene")]
+    [Header("Configuraciï¿½n de Win Sceene")]
     [Tooltip("El nombre exacto de la escena de Win en Build Settings")]
     [SerializeField] private string winSceneName = "WinScene";
+    
+    [SerializeField] private ItemManager ItemManager;
 
     private void Start()
     {
-        // Colocar la cámara en la posición inicial del juego al arrancar
+        // Colocar la cï¿½mara en la posiciï¿½n inicial del juego al arrancar
         if (cameraTransform != null && gameCameraTarget != null)
         {
             cameraTransform.position = gameCameraTarget.position;
@@ -53,7 +55,7 @@ public class TransitionManager : MonoBehaviour
 
     private IEnumerator GameOverRoutine(bool condition)
     {
-        // 1. Bloqueamos interacción
+        // 1. Bloqueamos interacciï¿½n
         fadeCanvasGroup.blocksRaycasts = true;
 
         // 2. Fade Out a negro
@@ -82,6 +84,7 @@ public class TransitionManager : MonoBehaviour
     {
         StopAllCoroutines();
         StartCoroutine(TransitionRoutine(shopContainer, gameContainer, gameCameraTarget));
+        ItemManager.OnTransition();
     }
 
     private IEnumerator TransitionRoutine(GameObject fromContainer, GameObject toContainer, Transform targetCameraTransform)
@@ -100,7 +103,7 @@ public class TransitionManager : MonoBehaviour
                 gO.SetActive(false);
         }
 
-        // Mover y rotar la cámara suavemente hacia el destino
+        // Mover y rotar la cï¿½mara suavemente hacia el destino
         if (cameraTransform != null && targetCameraTransform != null)
         {
             float camTimer = 0f;
@@ -121,7 +124,7 @@ public class TransitionManager : MonoBehaviour
                 yield return null;
             }
 
-            // Asegurar posición y rotación final
+            // Asegurar posiciï¿½n y rotaciï¿½n final
             cameraTransform.position = targetCameraTransform.position;
             cameraTransform.rotation = targetCameraTransform.rotation;
         }

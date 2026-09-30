@@ -7,6 +7,7 @@ public class ItemManager : MonoBehaviour
 {
     public List<Item> AllItems = new List<Item>();
     public List<Item> PurchasedItems = new List<Item>();
+    [SerializeField] private SellingItem[] ShopItems; 
 
     public static ItemManager Instance { get; private set; }
 
@@ -28,23 +29,18 @@ public class ItemManager : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    public void OnTransition()
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        SearchPockets();
+        //SearchPockets();
         ModifyPockets();
 
-        SearchBouncePins();
+        //SearchBouncePins();
         UpgradeBouncePins();
+
+        foreach (SellingItem item in ShopItems)
+        {
+            item.OnItem();
+        }
     }
 
     private void SearchPockets()

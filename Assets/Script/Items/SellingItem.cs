@@ -19,44 +19,7 @@ public class SellingItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     void Start()
     {
-        ItemManager = GameObject.FindGameObjectWithTag("ItemManager").GetComponent<ItemManager>();
-
-        if (ItemManager != null)
-        {
-            Item = ItemManager.GetItem();
-
-            if (PuntuactionManager.GetPunctuaction() < Item.ItemPrice)
-            {
-                PriceText.color = Color.red;
-                BuyButton.interactable = false;
-            }
-            else
-            {
-                PriceText.color = Color.white;
-            }
-
-            PriceText.text = Item.ItemPrice.ToString() + " X ";
-        }
-        else
-        {
-            Debug.Log("No se ha encontrado ningun ItemManager");
-        }
-
-        if (ItemManager != null)
-        {
-            ItemDescription.GetComponent<TextMeshProUGUI>().text = Item.ItemDescription;
-            ItemDescription.SetActive(false);
-        }
-
-        Sprite nuevoSprite = Resources.Load<Sprite>(Item.ItemSpriteSource);
-        if (nuevoSprite != null)
-        {
-            Sprite.sprite = nuevoSprite;
-        }
-        else
-        {
-            Debug.LogWarning("No se encontró el sprite en la ruta especificada.");
-        }
+        OnItem();
     }
 
     public void OnSell()
@@ -90,5 +53,40 @@ public class SellingItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         {
             ItemDescription.SetActive(false);
         }
+    }
+
+    public void OnItem()
+    {
+        ItemManager = GameObject.FindGameObjectWithTag("ItemManager").GetComponent<ItemManager>();
+
+        if (ItemManager != null)
+        {
+            Item = ItemManager.GetItem();
+
+            if (PuntuactionManager.GetPunctuaction() < Item.ItemPrice)
+            {
+                PriceText.color = Color.red;
+                BuyButton.interactable = false;
+            }
+            else
+            {
+                PriceText.color = Color.white;
+            }
+
+            PriceText.text = Item.ItemPrice.ToString() + " X ";
+        }
+        else
+        {
+            Debug.Log("No se ha encontrado ningun ItemManager");
+        }
+
+        if (ItemManager != null)
+        {
+            ItemDescription.GetComponent<TextMeshProUGUI>().text = Item.ItemDescription;
+            ItemDescription.SetActive(false);
+        }
+
+        Sprite nuevoSprite = Resources.Load<Sprite>(Item.ItemSpriteSource);
+        Sprite.sprite = nuevoSprite;
     }
 }

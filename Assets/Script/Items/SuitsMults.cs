@@ -13,16 +13,16 @@ public class SuitsMults : MonoBehaviour
         switch (text)
         {
             case "Heart":
-                HeartText.text = "Heart Suit Multiplier: x" + mult;
+                HeartText.text = "x " + mult;
                 break;
             case "Diamond":
-                DiamondText.text = "Diamond Suit Multiplier: x" + mult;
+                DiamondText.text = "x " + mult;
                 break;
             case "Clubs":
-                ClubsText.text = "Clubs Suit Multiplier: x" + mult;
+                ClubsText.text = "x " + mult;
                 break;
             case "Spades":
-                SpadesText.text = "Spades Suit Multiplier: x" + mult;
+                SpadesText.text = "x " + mult;
                 break;
         }
     }
