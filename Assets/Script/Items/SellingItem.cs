@@ -11,6 +11,7 @@ public class SellingItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     [SerializeField] private GameObject ItemDescription;
 
     [SerializeField] private TextMeshProUGUI PriceText;
+    [SerializeField] private GameObject BallSprite;
 
     [SerializeField] private Button BuyButton;
 
@@ -32,7 +33,7 @@ public class SellingItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
                 PriceText.color = Color.black;
             }
 
-            PriceText.text = Item.ItemPrice.ToString() + " €";
+            PriceText.text = Item.ItemPrice.ToString() + " X ";
         }
         else
         {
@@ -52,8 +53,9 @@ public class SellingItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         {
             ItemManager.PurchasedItems.Add(Item);
             BuyButton.interactable = false;
-            BuyButton.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "SOLD";
+            PriceText.text = "SOLD";
             PlayerPocket.Points -= (int)Item.ItemPrice;
+            BallSprite.SetActive(false);
         }
         else
         {
