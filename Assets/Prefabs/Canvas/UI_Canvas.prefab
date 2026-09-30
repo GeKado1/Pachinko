@@ -1235,6 +1235,8 @@ MonoBehaviour:
   transitionManager: {fileID: 0}
   botonSiguienteRonda: {fileID: 0}
   botonPagarCuota: {fileID: 0}
+  paiedQuotes: 0
+  quotesTotalsForWin: 3
 --- !u!114 &8428883794375978051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1253,7 +1255,6 @@ MonoBehaviour:
   - {fileID: 7892125876612712386}
   - {fileID: 3114540404513720532}
   ammoManager: {fileID: 0}
-  ammoPerRound: 20
   cameraTransform: {fileID: 0}
   gameCameraTarget: {fileID: 0}
   shopCameraTarget: {fileID: 0}
@@ -1261,6 +1262,7 @@ MonoBehaviour:
   gameOverSceneName: GameOverScreen
   fadeCanvasGroup: {fileID: 7114012466776915707}
   fadeDuration: 1
+  winSceneName: VictoryScene
 --- !u!1 &3677800633079292880
 GameObject:
   m_ObjectHideFlags: 0

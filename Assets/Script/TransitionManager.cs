@@ -27,6 +27,10 @@ public class TransitionManager : MonoBehaviour
     [SerializeField] private CanvasGroup fadeCanvasGroup;
     [SerializeField] private float fadeDuration = 0.2f;
 
+    [Header("Configuración de Win Sceene")]
+    [Tooltip("El nombre exacto de la escena de Win en Build Settings")]
+    [SerializeField] private string winSceneName = "WinScene";
+
     private void Start()
     {
         // Colocar la cámara en la posición inicial del juego al arrancar
@@ -37,12 +41,17 @@ public class TransitionManager : MonoBehaviour
         }
     }
 
-    public void TriggerGameOver()
+    public void TriggerWin()
     {
-        StartCoroutine(GameOverRoutine());
+        StartCoroutine(GameOverRoutine(false));
     }
 
-    private IEnumerator GameOverRoutine()
+    public void TriggerGameOver()
+    {
+        StartCoroutine(GameOverRoutine(true));
+    }
+
+    private IEnumerator GameOverRoutine(bool condition)
     {
         // 1. Bloqueamos interacción
         fadeCanvasGroup.blocksRaycasts = true;
@@ -57,8 +66,10 @@ public class TransitionManager : MonoBehaviour
         }
         fadeCanvasGroup.alpha = 1f;
 
-        // 3. Cargar la escena de Game Over
-        SceneManager.LoadScene(gameOverSceneName);
+        if(condition)
+            SceneManager.LoadScene(gameOverSceneName);
+        else
+            SceneManager.LoadScene(winSceneName);
     }
 
     public void TriggerTransitionToShop()

@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class QuoteManager : MonoBehaviour
 {
+    [Header("Configuración de Cuota")]
     [SerializeField] private int Quote;
     [SerializeField] private int actualRound = 1;
     [SerializeField] private int maxRounds = 3;
@@ -12,6 +13,10 @@ public class QuoteManager : MonoBehaviour
     [SerializeField] private TransitionManager transitionManager;
     [SerializeField] private Button botonSiguienteRonda;
     [SerializeField] private Button botonPagarCuota;
+
+    [Header("Win Condition")]
+    public int paiedQuotes = 0;
+    public int quotesTotalsForWin = 3;
 
     void Start()
     {
@@ -49,8 +54,19 @@ public class QuoteManager : MonoBehaviour
             // 1. Cobramos la cuota
             PuntuactionManager.UpdatePuntuaction(-Quote);
 
+            paiedQuotes++;
+
+            // 3. COMPROBACIÓN DE VICTORIA
+            if (paiedQuotes >= quotesTotalsForWin)
+            {
+                if (transitionManager != null)
+                    transitionManager.TriggerWin();
+
+                return;
+            }
+
             // 2. Subimos la dificultad y reseteamos rondas
-            Quote += 500; // Lo que quieras que suba para el siguiente nivel
+            Quote *= 2; 
             actualRound = 1;
 
             // 3. Volvemos al tablero como una ronda nueva
