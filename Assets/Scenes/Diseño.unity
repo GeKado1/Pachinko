@@ -269,6 +269,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3541661494430979994, guid: a21a3b36814f4e04fa31474e53b47521, type: 3}
   m_PrefabInstance: {fileID: 24086972}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &24086974 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4230771653414335198, guid: a21a3b36814f4e04fa31474e53b47521, type: 3}
+  m_PrefabInstance: {fileID: 24086972}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 008720bcf5b941e4fb3c9bbfdd352585, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &34524035
 GameObject:
   m_ObjectHideFlags: 0
@@ -2730,6 +2741,10 @@ PrefabInstance:
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 519420032}
+    - target: {fileID: 8428883794375978051, guid: 98f4470581d3ce74d9415477676a3afb, type: 3}
+      propertyPath: PlayerSceneSetup
+      value: 
+      objectReference: {fileID: 24086974}
     - target: {fileID: 8428883794375978051, guid: 98f4470581d3ce74d9415477676a3afb, type: 3}
       propertyPath: gameCameraTarget
       value: 

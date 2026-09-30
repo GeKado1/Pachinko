@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -12,7 +11,6 @@ public class HoldButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public void OnPointerDown(PointerEventData eventData)
     {
         launchCoroutine = StartCoroutine(Hold());
-        Debug.Log("BOTON APRETADO");
     }
 
     public void OnPointerUp(PointerEventData eventData)

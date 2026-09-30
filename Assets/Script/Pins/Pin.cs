@@ -35,6 +35,7 @@ public class Pin : MonoBehaviour
 
     public void OnPinChange(string pinType)
     {
+        Debug.Log("change");
         NormalPin.SetActive(false);
         DeactiveAll();
 
@@ -64,21 +65,27 @@ public class Pin : MonoBehaviour
         {
             case "AttractorPin":
                 AttractorPin.SetActive(true);
+                Debug.Log("atrac");
                 break;
             case "RejectorPin":
                 RejectorPin.SetActive(true);
+                Debug.Log("ref");
                 break;
             case "BuffMultPin":
                 BuffMultPin.SetActive(true);
+                Debug.Log("buff");
                 break;
             case "NerfMultPin":
                 NerfMultPin.SetActive(true);
+                Debug.Log("nerf");
                 break;
             case "DivisorPin":
                 DivisorPin.SetActive(true);
+                Debug.Log("div");
                 break;
             default:
                 NormalPin.SetActive(true);
+                Debug.Log("default");
                 break;
         }
     }

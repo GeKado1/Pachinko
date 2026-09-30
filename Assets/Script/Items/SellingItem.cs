@@ -31,6 +31,11 @@ public class SellingItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             PriceText.text = " SOLD";
             PuntuactionManager.UpdatePuntuaction(-(int)Item.ItemPrice);
             BallSprite.SetActive(false);
+            
+            if (Item.ItemTag.Equals("Pin"))
+            {
+                PlayerSceneSetup.PinsToSetup++;
+            }
         }
         else
         {

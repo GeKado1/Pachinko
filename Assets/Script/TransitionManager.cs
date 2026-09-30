@@ -30,8 +30,10 @@ public class TransitionManager : MonoBehaviour
     [Header("Configuraci�n de Win Sceene")]
     [Tooltip("El nombre exacto de la escena de Win en Build Settings")]
     [SerializeField] private string winSceneName = "WinScene";
-    
+
+    [Header("Tema Items")]
     [SerializeField] private ItemManager ItemManager;
+    [SerializeField] private PlayerSceneSetup PlayerSceneSetup;
 
     private void Start()
     {
@@ -85,6 +87,11 @@ public class TransitionManager : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(TransitionRoutine(shopContainer, gameContainer, gameCameraTarget));
         ItemManager.OnTransition();
+
+        if (PlayerSceneSetup.PinsToSetup > 0)
+        {
+            PlayerSceneSetup.OnTransition();
+        }
     }
 
     private IEnumerator TransitionRoutine(GameObject fromContainer, GameObject toContainer, Transform targetCameraTransform)

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerSceneSetup : MonoBehaviour
 {
     public static PlayerSceneSetup instance { get; private set; }
-    public static int PinsToSetup;
+    public static int PinsToSetup = 0;
 
     [SerializeField] private GameObject SetupCanvas;
 
@@ -29,20 +29,22 @@ public class PlayerSceneSetup : MonoBehaviour
         }
     }
 
-    private void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    void Start()
     {
         SetupCanvas.SetActive(false);
+    }
 
+    void Update()
+    {
+        if (PinsToSetup <= 0)
+        {
+            SetupCanvas.SetActive(false);
+        }
+    }
+
+    public void OnTransition()
+    {
+        SetupCanvas.SetActive(true);
         Items = ItemManager.GetPinItems();
 
         ItemsType = Items
