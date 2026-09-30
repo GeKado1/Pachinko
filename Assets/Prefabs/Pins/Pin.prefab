@@ -696,25 +696,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4047555086032145481}
     m_Modifications:
-    - target: {fileID: 160180168842651608, guid: e18b1a53f31689d499fdf4c9c1eb33fb, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 160180168842651608, guid: e18b1a53f31689d499fdf4c9c1eb33fb, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 160180168842651608, guid: e18b1a53f31689d499fdf4c9c1eb33fb, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.95
-      objectReference: {fileID: 0}
     - target: {fileID: 7312441690038582352, guid: e18b1a53f31689d499fdf4c9c1eb33fb, type: 3}
       propertyPath: m_Name
       value: DivisorPin
-      objectReference: {fileID: 0}
-    - target: {fileID: 7312441690038582352, guid: e18b1a53f31689d499fdf4c9c1eb33fb, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7447416049232122217, guid: e18b1a53f31689d499fdf4c9c1eb33fb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -826,18 +810,6 @@ PrefabInstance:
     - target: {fileID: 4961140755561735506, guid: 19519d3e91c49e0469875cc137b0a43a, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7667935522789047633, guid: 19519d3e91c49e0469875cc137b0a43a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 7667935522789047633, guid: 19519d3e91c49e0469875cc137b0a43a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 7667935522789047633, guid: 19519d3e91c49e0469875cc137b0a43a, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.99
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
