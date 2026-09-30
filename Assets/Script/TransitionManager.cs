@@ -33,17 +33,14 @@ public class TransitionManager : MonoBehaviour
 
     public void TriggerTransitionToShop()
     {
-        Debug.Log("points: " + PuntuactionManager.GetPunctuaction());
         StopAllCoroutines();
         StartCoroutine(TransitionRoutine(gameContainer, shopContainer, shopCameraTarget));
-        //PlayerPocket.ChangeScene();
     }
 
     public void TriggerTransitionToGame()
     {
         StopAllCoroutines();
         StartCoroutine(TransitionRoutine(shopContainer, gameContainer, gameCameraTarget));
-        //PlayerPocket.ChangeScene();
     }
 
     private IEnumerator TransitionRoutine(GameObject fromContainer, GameObject toContainer, Transform targetCameraTransform)
