@@ -1013,6 +1013,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8722752667892744674, guid: 16dce2c937dca5649947da66c01821eb, type: 3}
+      propertyPath: SuitsMults
+      value: 
+      objectReference: {fileID: 1054623780}
     - target: {fileID: 8970416900452648806, guid: 16dce2c937dca5649947da66c01821eb, type: 3}
       propertyPath: m_Name
       value: ItemManager
@@ -6703,6 +6707,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4047555086032145481, guid: d7df03156d59c8a499d5bccccec56877, type: 3}
   m_PrefabInstance: {fileID: 1036545504}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1054623780 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8685813112632520929, guid: 98f4470581d3ce74d9415477676a3afb, type: 3}
+  m_PrefabInstance: {fileID: 354277073}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa931d38ae1950b48b51ab7a216a4c81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1054940217 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4047555086032145481, guid: d7df03156d59c8a499d5bccccec56877, type: 3}
