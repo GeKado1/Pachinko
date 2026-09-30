@@ -84,9 +84,7 @@ public class ItemLoader : MonoBehaviour
                         itemSpriteSrc = row["ITEM_SPRITE"];
                     }
 
-                    Debug.Log(itemSpriteSrc);
-
-                    Item item = new Item(itemName, itemTag, itemDescription, itemPrice, statsInvolved, itemStatsValue);
+                    Item item = new Item(itemName, itemTag, itemDescription, itemPrice, statsInvolved, itemStatsValue, itemSpriteSrc);
                     ItemManager.AllItems.Add(item);
                 }
             }
