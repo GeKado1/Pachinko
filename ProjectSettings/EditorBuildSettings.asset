@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Shop.unity
     guid: a7e1a5e38f1c66e4d9d06d5f72455a92
-  - enabled: 1
+  - enabled: 0
     path: "Assets/Scenes/Dise\xF1o Yo.unity"
     guid: c997db81413f28049bb8d28a7c4093b2
   - enabled: 1
