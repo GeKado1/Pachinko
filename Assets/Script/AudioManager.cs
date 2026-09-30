@@ -7,32 +7,34 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance;
 
     [Header("Music")]
-    [SerializeField] private AudioSource musicSource;
+    [SerializeField] public AudioSource musicSource;
 
     [Header("SFX")]
-    [SerializeField] private AudioSource sfxSource;
+    [SerializeField] public AudioSource sfxSource;
 
     [Header("Music Clips")]
     [SerializeField] private AudioClip gameMusic;
-    [SerializeField] private AudioClip shopMusic;
-    [SerializeField] private AudioClip victoryMusic;
-    [SerializeField] private AudioClip loseMusic;
+    [SerializeField] private AudioClip shopMusic;   //TODO
+    [SerializeField] private AudioClip victoryMusic;    //TODO
+    [SerializeField] private AudioClip loseMusic;   //TODO
 
     [Header("SFX Clips")]
     [SerializeField] private AudioClip bouncerSound;
     [SerializeField] private AudioClip ballLaunch;
-    [SerializeField] private AudioClip pinBounce;
-    [SerializeField] private AudioClip purchase;
-    [SerializeField] private AudioClip roundCompleted;
+    [SerializeField] private AudioClip pinBounce;   //TODO
+    [SerializeField] private AudioClip purchase;    //Cuando compras.
+    [SerializeField] private AudioClip roundCompleted;  //TODO
     [SerializeField] private AudioClip ballFalled;
 
-    [Header("Pitch Variation")]
+    [Header("Pitch Variation")]     //HAY QUE AJUSTARLOS EN EL EDITOR (son para los sonidos repetidos para que suenen diferentes en cada clip
     [SerializeField] private float minPitch;
     [SerializeField] private float maxPitch;
 
     //CAMBIAR MUSICA --->   AudioManager.Instance.PlayMusic(MusicTrack.Shop);
     //PLAY SFX --------->   AudioManager.Instance.PlaySFX(SFX.BallBounce);
-
+    //Recordar marcar si es bucle o no con --> musicSource.Loop = true o false
+    //Recordar ajustar volumen con ---> SetMusicVolume(1);
+    //AJUSTAR TODOS LOS VOLUMENES PORFAVOR BAJAD UN POCO
 
     private void Awake()
     {
@@ -116,7 +118,7 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        if (sound == SFX.BallBounce)
+        if (sound == SFX.PinBounce)
         {
             sfxSource.pitch = Random.Range(minPitch, maxPitch);
         }
@@ -139,7 +141,7 @@ public class AudioManager : MonoBehaviour
             case SFX.BallLaunch:
                 return ballLaunch;
 
-            case SFX.ButtonClick:
+            case SFX.PinBounce:
                 return pinBounce;
 
             case SFX.Purchase:
@@ -182,7 +184,7 @@ public enum SFX
 {
     BallBounce,
     BallLaunch,
-    ButtonClick,
+    PinBounce,
     Purchase,
     RoundCompleted,
     BallFalled

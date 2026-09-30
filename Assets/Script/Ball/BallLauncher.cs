@@ -117,7 +117,7 @@ public class BallLauncher : MonoBehaviour
             PuntuactionManager.UpdatePuntuaction(currentMultiplier);
         }
 
-        CameraShake.Instance.Shake(0.2f, 0.1f);
+        CameraShake.Instance.Shake(0.15f, 0.075f);
         //buttonAnimation.Rewind();
         buttonAnimation.Play();
         AudioManager.Instance.PlaySFX(SFX.BallLaunch);
