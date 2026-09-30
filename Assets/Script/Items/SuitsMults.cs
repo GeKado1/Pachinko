@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SuitsMults : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI HearthText;
+    [SerializeField] private TextMeshProUGUI HeartText;
     [SerializeField] private TextMeshProUGUI DiamondText;
     [SerializeField] private TextMeshProUGUI ClubsText;
     [SerializeField] private TextMeshProUGUI SpadesText;
@@ -12,8 +12,8 @@ public class SuitsMults : MonoBehaviour
     {
         switch (text)
         {
-            case "Hearth":
-                HearthText.text = "Hearth Suit Multiplier: x" + mult;
+            case "Heart":
+                HeartText.text = "Heart Suit Multiplier: x" + mult;
                 break;
             case "Diamond":
                 DiamondText.text = "Diamond Suit Multiplier: x" + mult;

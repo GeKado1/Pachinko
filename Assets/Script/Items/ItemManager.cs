@@ -71,19 +71,19 @@ public class ItemManager : MonoBehaviour
                 //Sorry por el switch, se tendria que modificar o hacer otro csv para los pocket items para evitarlo (y no nos vamos engañar, es trabajo extra y me da flojera y la jam es este miercoles, no da tiempo)
                 switch (item.ItemName)
                 {
-                    case "HearthAce":
+                    case "HeartAce":
                         mult = 0f;
 
                         foreach (Pocket pocket in PocketList)
                         {
-                            if (pocket.Suit.Equals("Hearth"))
+                            if (pocket.Suit.Equals("Heart"))
                             {
                                 pocket.ModifyMult(item.ValueOfStats[0]);
                                 mult = pocket.GetPocketValue();
                             }
                         }
 
-                        SuitsMults.ModifyText("Hearth", mult);
+                        SuitsMults.ModifyText("Heart", mult);
                         break;
                     case "DiamondAce":
                         mult = 0f;
@@ -134,7 +134,7 @@ public class ItemManager : MonoBehaviour
                             if (pocket.Color.Equals("Red")) {
                                 pocket.ModifyMult(item.ValueOfStats[0], true);
                                 mult = pocket.GetPocketValue();
-                                SuitsMults.ModifyText("Hearth", mult);
+                                SuitsMults.ModifyText("Heart", mult);
                                 SuitsMults.ModifyText("Diamond", mult);
                             }
                             else
@@ -175,7 +175,7 @@ public class ItemManager : MonoBehaviour
                             {
                                 pocket.ModifyMult(item.ValueOfStats[1], false);
                                 mult = pocket.GetPocketValue();
-                                SuitsMults.ModifyText("Hearth", mult);
+                                SuitsMults.ModifyText("Heart", mult);
                                 SuitsMults.ModifyText("Diamond", mult);
                             }
                         }
