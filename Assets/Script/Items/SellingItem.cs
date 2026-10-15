@@ -76,6 +76,7 @@ public class SellingItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             else
             {
                 PriceText.color = Color.white;
+                BuyButton.interactable = true;
             }
 
             PriceText.text = Item.ItemPrice.ToString() + " X ";
