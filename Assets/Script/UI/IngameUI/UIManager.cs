@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI QuoteText;
 
     public static bool NextRoundUpdate = false;
+    public static bool NextQuoteUpdate = false;
 
     void Start()
     {
@@ -39,6 +40,12 @@ public class UIManager : MonoBehaviour
         {
             BallsText.text = BallManager.GetBalls().ToString();
             NextRoundUpdate = false;
+        }
+
+        if (NextQuoteUpdate)
+        {
+            QuoteText.text = "Next Payment " + QuoteManager.GetPointsRequired();
+            NextQuoteUpdate = false;
         }
     }
 }

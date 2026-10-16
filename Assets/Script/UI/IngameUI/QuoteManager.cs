@@ -68,6 +68,8 @@ public class QuoteManager : MonoBehaviour
             // 2. Subimos la dificultad y reseteamos rondas
             Quote *= 2; 
             actualRound = 1;
+            PointsRequired = Quote;
+            UIManager.NextQuoteUpdate = true;
 
             // 3. Volvemos al tablero como una ronda nueva
             transitionManager.StartNextRound();
